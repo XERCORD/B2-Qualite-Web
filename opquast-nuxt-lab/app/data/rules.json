@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Il est possible de connaître les nouveaux contenus ou services",
+    "authors": ["Marco BARONI"],
+    "path": "/rules/1",
+    "description": "Une image vaut souvent mieux qu’un long discours. Certes, mais tout d’abord, il peut s’avérer difficile de véritablement comprendre un graphique (courbe, diagramme, histogramme, camembert...) si l’on n'a pas les données qui ont permis de le créer. D’autre part, certains utilisateurs ne pourront pas avoir accès au rendu graphique, et l’accès aux données leur permettra de comprendre les contenus.",
+    "tags": [
+      "Accessibilité",
+      "Conception",
+      "Contenus",
+      "Éditorial",
+      "SEO",
+      "Écoconception"
+    ],
+    "objectives": [
+      "Permettre aux utilisateurs d'identifier immédiatement les nouveaux contenus ou services en ligne.",
+      "Améliorer la prise en compte des contenus par les moteurs de recherche et outils d’indexation."
+    ],
+    "implementationIntro": "À titre d'exemple, les différentes solutions ci-dessous peuvent être déployées seules ou conjointement :",
+    "implementation": [
+      "Publier un flux RSS des actualités du site.",
+      "Publier une rubrique du type « Actualités du site » ou « Quoi de neuf ? »",
+      "Indiquer un compte de réseau social ou un canal d'actualité où sont publiées les actualités concernant le site."
+    ],
+    "control": [
+      "Vérifier qu’un canal interne existe (flux RSS, rubrique « Quoi de neuf ? », etc.).",
+      "Vérifier qu’un canal externe est accessible depuis la page d’accueil (si utilisé)."
+    ],
+    "screenshotsSources": [
+      "https://www.service-public.fr/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Les informations importantes sont accessibles et compréhensibles",
+    "path": "/rules/2",
+    "tags": [
+      "Accessibilité",
+      "Conception",
+      "Contenus",
+      "Éditorial",
+      "UX",
+      "SEO"
+    ],
+    "objective": "Assurer que les informations essentielles sont facilement accessibles et compréhensibles pour tous les utilisateurs, y compris ceux ayant des besoins spécifiques."
+  }
+]

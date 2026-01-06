@@ -1,0 +1,21 @@
+{
+    "editor.formatOnSave": true,
+  
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  
+    "prettier.singleQuote": true,
+    "prettier.semi": false,
+    "prettier.tabWidth": 2,
+    "prettier.useTabs": false
+  }
+  
