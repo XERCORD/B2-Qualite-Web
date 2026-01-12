@@ -159,7 +159,7 @@ const activeTab = ref('preview')
     <!-- Exemples -->
     <section class="space-y-4">
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
-        Exemples
+        Exemples todo
       </h2>
 
       <div
