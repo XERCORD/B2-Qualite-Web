@@ -1,7 +1,7 @@
 <script setup>
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 24
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
 </script>
@@ -122,7 +122,7 @@ const activeTab = ref('preview')
                 :src="`/screenshots/rule-${rule.id}/screenshot-${
                   index + 1
                 }.png`"
-                :alt="`Exemple d’application de la règle ${rule.id}`"
+                :alt="`Exemple d'application de la règle ${rule.id}`"
                 class="h-full w-full object-cover"
                 onerror="
                   this.style.display = 'none'
@@ -197,31 +197,93 @@ const activeTab = ref('preview')
           <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Exemple de gestion des alias email pour protéger l'adresse principale
             </div>
 
             <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
-              </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
-                <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
+              <div class="mb-4">
+                <h3 class="text-lg font-semibold text-zinc-100 mb-2">
+                  Mes Alias Email
+                </h3>
+                <p class="text-sm text-zinc-400">
+                  Créez des adresses email temporaires qui redirigent vers votre boîte principale
                 </p>
               </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
-                </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
-                </button>
+
+              <div class="bg-zinc-900 rounded-lg p-4 border border-zinc-800 mb-4">
+                <div class="flex items-center gap-3 mb-3">
+                  <input
+                    type="text"
+                    placeholder="nom-alias"
+                    class="flex-1 px-3 py-2 bg-zinc-800 border border-zinc-700 rounded text-sm text-zinc-100"
+                  />
+                  <span class="text-sm text-zinc-400">@votredomaine.com</span>
+                  <button class="px-4 py-2 bg-zinc-700 text-zinc-100 rounded text-sm hover:bg-zinc-600 transition-colors">
+                    Créer
+                  </button>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <div class="font-medium text-zinc-100 mb-1">
+                        shopping@votredomaine.com
+                      </div>
+                      <div class="text-xs text-zinc-400">
+                        Créé le 15/01/2026 • 24 emails reçus
+                      </div>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="text-xs px-2 py-1 bg-green-900 text-green-300 rounded">
+                          Actif
+                        </span>
+                        <span class="text-xs text-zinc-500">
+                          → utilisateur@email.com
+                        </span>
+                      </div>
+                    </div>
+                    <div class="flex gap-2">
+                      <button class="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded hover:bg-zinc-700">
+                        Désactiver
+                      </button>
+                      <button class="text-xs px-3 py-1 bg-red-900 text-red-300 rounded hover:bg-red-800">
+                        Supprimer
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
+                  <div class="flex items-start justify-between gap-4">
+                    <div class="flex-1">
+                      <div class="font-medium text-zinc-100 mb-1">
+                        newsletter@votredomaine.com
+                      </div>
+                      <div class="text-xs text-zinc-400">
+                        Créé le 10/01/2026 • 156 emails reçus
+                      </div>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="text-xs px-2 py-1 bg-green-900 text-green-300 rounded">
+                          Actif
+                        </span>
+                        <span class="text-xs text-zinc-500">
+                          → utilisateur@email.com
+                        </span>
+                      </div>
+                    </div>
+                    <div class="flex gap-2">
+                      <button class="text-xs px-3 py-1 bg-zinc-800 text-zinc-300 rounded hover:bg-zinc-700">
+                        Désactiver
+                      </button>
+                      <button class="text-xs px-3 py-1 bg-red-900 text-red-300 rounded hover:bg-red-800">
+                        Supprimer
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
 
           <!-- CODE -->
@@ -230,52 +292,57 @@ const activeTab = ref('preview')
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
             >
 <code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
+&lt;!-- Système de gestion d'alias email --&gt;
+&lt;div class=&quot;space-y-4&quot;&gt;
+  &lt;h3 class=&quot;text-lg font-semibold&quot;&gt;Mes Alias Email&lt;/h3&gt;
+
+  &lt;!-- Formulaire de création --&gt;
+  &lt;div class=&quot;bg-zinc-900 rounded-lg p-4 border border-zinc-800&quot;&gt;
+    &lt;div class=&quot;flex items-center gap-3&quot;&gt;
+      &lt;input
+        type=&quot;text&quot;
+        placeholder=&quot;nom-alias&quot;
+        class=&quot;flex-1 px-3 py-2 bg-zinc-800 border border-zinc-700 rounded&quot;
+      /&gt;
+      &lt;span class=&quot;text-sm&quot;&gt;@votredomaine.com&lt;/span&gt;
+      &lt;button class=&quot;px-4 py-2 bg-zinc-700 text-zinc-100 rounded&quot;&gt;
+        Créer
+      &lt;/button&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
+  &lt;!-- Liste des alias --&gt;
+  &lt;div class=&quot;space-y-2&quot;&gt;
+    &lt;div class=&quot;bg-zinc-900 rounded-lg p-4 border border-zinc-800&quot;&gt;
+      &lt;div class=&quot;flex items-start justify-between&quot;&gt;
+        &lt;div&gt;
+          &lt;div class=&quot;font-medium text-zinc-100&quot;&gt;
+            shopping@votredomaine.com
+          &lt;/div&gt;
+          &lt;div class=&quot;text-xs text-zinc-400&quot;&gt;
+            Créé le 15/01/2026 • 24 emails reçus
+          &lt;/div&gt;
+          &lt;span class=&quot;text-xs px-2 py-1 bg-green-900 text-green-300 rounded&quot;&gt;
+            Actif
           &lt;/span&gt;
         &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
+        &lt;div class=&quot;flex gap-2&quot;&gt;
+          &lt;button class=&quot;text-xs px-3 py-1 bg-zinc-800 rounded&quot;&gt;
+            Désactiver
+          &lt;/button&gt;
+          &lt;button class=&quot;text-xs px-3 py-1 bg-red-900 text-red-300 rounded&quot;&gt;
+            Supprimer
+          &lt;/button&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
 
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              Les alias email permettent de créer des adresses temporaires ou spécifiques par usage, protégeant ainsi votre adresse principale du spam et facilitant la gestion des abonnements.
             </p>
           </div>
         </div>

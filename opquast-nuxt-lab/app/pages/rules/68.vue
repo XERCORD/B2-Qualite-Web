@@ -1,7 +1,7 @@
 <script setup>
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 68
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
 </script>
@@ -58,16 +58,6 @@ const activeTab = ref('preview')
       <ul class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
         <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
       </ul>
-      <ul
-        v-if="Array.isArray(rule.objectives)"
-        class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300"
-      >
-        <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
-      </ul>
-
-      <p v-else class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
-        {{ rule.objective }}
-      </p>
     </section>
 
     <!-- Mise en œuvre -->
@@ -197,31 +187,72 @@ const activeTab = ref('preview')
           <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Exemple d'affichage de l'origine sur une fiche produit.
             </div>
 
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
-              </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
-                <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
-                </p>
+            <div
+              class="max-w-sm mx-auto rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden"
+            >
+              <!-- Photo Produit -->
+              <div class="relative h-48 bg-zinc-800">
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <span class="text-zinc-600">Photo Pull Marin</span>
+                </div>
+                <!-- Badge Origine Rapide -->
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-zinc-900 shadow-sm backdrop-blur-sm"
+                  >
+                    🇫🇷 Fabriqué en France
+                  </span>
+                </div>
               </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
-                </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
+
+              <!-- Contenu -->
+              <div class="p-5 space-y-4">
+                <div>
+                  <h3 class="text-lg font-semibold text-zinc-100">
+                    Pull Marin Authentique
+                  </h3>
+                  <div class="text-zinc-400 text-sm">120,00 €</div>
+                </div>
+
+                <!-- Bloc Traçabilité -->
+                <div class="rounded-lg bg-zinc-900/50 p-3 border border-zinc-800">
+                  <h4
+                    class="text-xs font-semibold text-zinc-500 uppercase tracking-wide mb-2"
+                  >
+                    Traçabilité & Origine
+                  </h4>
+                  <ul class="space-y-2 text-sm">
+                    <li class="flex justify-between">
+                      <span class="text-zinc-400">Tricotage</span>
+                      <span class="text-zinc-200 font-medium">
+                        Bretagne, France
+                      </span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span class="text-zinc-400">Laine</span>
+                      <span class="text-zinc-200 font-medium">
+                        Mérinos d'Arles
+                      </span>
+                    </li>
+                    <li class="flex justify-between">
+                      <span class="text-zinc-400">Confection</span>
+                      <span class="text-zinc-200 font-medium">
+                        Nantes, France
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                <button
+                  class="w-full rounded-lg bg-zinc-100 py-2.5 text-sm font-semibold text-zinc-950 hover:bg-zinc-200 transition"
+                >
+                  Ajouter au panier
                 </button>
               </div>
             </div>
-          </div>
           </div>
 
           <!-- CODE -->
@@ -230,52 +261,43 @@ const activeTab = ref('preview')
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
             >
 <code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
+&lt;!-- Fiche produit avec mise en avant de l'origine --&gt;
+&lt;div class=&quot;relative&quot;&gt;
+  &lt;!-- Badge visible directement sur l'image --&gt;
+  &lt;div class=&quot;absolute top-3 left-3&quot;&gt;
+    &lt;span class=&quot;bg-white text-zinc-900 px-3 py-1 rounded-full text-xs font-bold&quot;&gt;
+      🇫🇷 Fabriqué en France
+    &lt;/span&gt;
   &lt;/div&gt;
+  &lt;img src=&quot;/pull-marin.jpg&quot; alt=&quot;Pull Marin&quot; /&gt;
+&lt;/div&gt;
 
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
-          &lt;/span&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
+&lt;div class=&quot;p-5 space-y-4&quot;&gt;
+  &lt;h3&gt;Pull Marin Authentique&lt;/h3&gt;
 
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+  &lt;!-- Bloc de détails techniques (Rassurance) --&gt;
+  &lt;div class=&quot;bg-zinc-900 p-3 rounded border border-zinc-800&quot;&gt;
+    &lt;h4 class=&quot;text-xs uppercase text-zinc-500 mb-2&quot;&gt;
+      Provenance
+    &lt;/h4&gt;
+    &lt;ul class=&quot;text-sm space-y-1&quot;&gt;
+      &lt;li class=&quot;flex justify-between&quot;&gt;
+        &lt;span class=&quot;text-zinc-400&quot;&gt;Tricotage :&lt;/span&gt;
+        &lt;span class=&quot;text-zinc-100&quot;&gt;Bretagne, France&lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li class=&quot;flex justify-between&quot;&gt;
+        &lt;span class=&quot;text-zinc-400&quot;&gt;Matière première :&lt;/span&gt;
+        &lt;span class=&quot;text-zinc-100&quot;&gt;Arles (Laine)&lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
-
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              L'information doit être visible (badge) et détaillée (liste). On
+              distingue ici le lieu de fabrication (Bretagne) de l'origine de la
+              matière première (Arles), ce qui renforce la crédibilité.
             </p>
           </div>
         </div>

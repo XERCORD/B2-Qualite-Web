@@ -1,7 +1,7 @@
 <script setup>
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 25
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
 </script>
@@ -122,7 +122,7 @@ const activeTab = ref('preview')
                 :src="`/screenshots/rule-${rule.id}/screenshot-${
                   index + 1
                 }.png`"
-                :alt="`Exemple d’application de la règle ${rule.id}`"
+                :alt="`Exemple d'application de la règle ${rule.id}`"
                 class="h-full w-full object-cover"
                 onerror="
                   this.style.display = 'none'
@@ -197,31 +197,73 @@ const activeTab = ref('preview')
           <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Exemple de configuration Referrer-Policy pour protéger la vie privée
             </div>
 
             <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
+              <h3 class="text-lg font-semibold text-zinc-100 mb-4">
+                Configuration Referrer-Policy
               </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
-                <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
-                </p>
-              </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
-                </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
-                </button>
+
+              <div class="space-y-4">
+                <div class="bg-zinc-900 rounded-lg p-4 border border-green-900">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-green-900 rounded-lg flex items-center justify-center text-green-300 shrink-0">
+                      ✓
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-green-300 mb-1">
+                        Recommandé: strict-origin-when-cross-origin
+                      </div>
+                      <div class="text-sm text-zinc-400 mb-2">
+                        Envoie l'origine complète pour les requêtes same-origin, seulement l'origine pour HTTPS vers HTTPS, et rien pour HTTPS vers HTTP
+                      </div>
+                      <code class="text-xs bg-zinc-950 px-2 py-1 rounded text-green-300">
+                        Referrer-Policy: strict-origin-when-cross-origin
+                      </code>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-zinc-900 rounded-lg p-4 border border-zinc-800">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-zinc-800 rounded-lg flex items-center justify-center text-zinc-400 shrink-0">
+                      •
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-zinc-100 mb-1">
+                        Alternative: no-referrer-when-downgrade
+                      </div>
+                      <div class="text-sm text-zinc-400 mb-2">
+                        Comportement par défaut - envoie le referrer complet sauf pour HTTPS vers HTTP
+                      </div>
+                      <code class="text-xs bg-zinc-950 px-2 py-1 rounded text-zinc-300">
+                        Referrer-Policy: no-referrer-when-downgrade
+                      </code>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-zinc-900 rounded-lg p-4 border border-yellow-900">
+                  <div class="flex items-start gap-3">
+                    <div class="w-8 h-8 bg-yellow-900 rounded-lg flex items-center justify-center text-yellow-300 shrink-0">
+                      ⚠
+                    </div>
+                    <div class="flex-1">
+                      <div class="font-medium text-yellow-300 mb-1">
+                        Maximum de protection: no-referrer
+                      </div>
+                      <div class="text-sm text-zinc-400 mb-2">
+                        N'envoie aucune information de référence - peut casser certaines fonctionnalités
+                      </div>
+                      <code class="text-xs bg-zinc-950 px-2 py-1 rounded text-yellow-300">
+                        Referrer-Policy: no-referrer
+                      </code>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
 
           <!-- CODE -->
@@ -230,52 +272,52 @@ const activeTab = ref('preview')
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
             >
 <code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
-  &lt;/div&gt;
+&lt;!-- Configuration dans le HTML --&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;strict-origin-when-cross-origin&quot;&gt;
 
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
-          &lt;/span&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
+&lt;!-- Configuration via en-tête HTTP --&gt;
+Referrer-Policy: strict-origin-when-cross-origin
 
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+&lt;!-- Configuration sur des liens spécifiques --&gt;
+&lt;a href=&quot;https://externe.com&quot; referrerpolicy=&quot;no-referrer&quot;&gt;
+  Lien externe
+&lt;/a&gt;
+
+&lt;!-- Configuration dans Nginx --&gt;
+add_header Referrer-Policy &quot;strict-origin-when-cross-origin&quot; always;
+
+&lt;!-- Configuration dans Apache --&gt;
+Header always set Referrer-Policy &quot;strict-origin-when-cross-origin&quot;
+
+&lt;!-- Valeurs possibles de Referrer-Policy: --&gt;
+- no-referrer
+  Aucune information de référence n'est envoyée
+
+- no-referrer-when-downgrade
+  Envoie le referrer complet sauf pour HTTPS → HTTP
+
+- origin
+  Envoie uniquement l'origine (domaine)
+
+- origin-when-cross-origin
+  Envoie l'URL complète en same-origin, l'origine sinon
+
+- same-origin
+  Envoie le referrer uniquement pour same-origin
+
+- strict-origin
+  Envoie l'origine sauf pour HTTPS → HTTP
+
+- strict-origin-when-cross-origin (recommandé)
+  Combine les avantages de protection et compatibilité
+
+- unsafe-url
+  Envoie toujours l'URL complète (non recommandé)
 </code>
 </pre>
 
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              La politique Referrer-Policy contrôle quelles informations de navigation sont partagées lorsqu'un utilisateur clique sur un lien ou charge une ressource externe, protégeant ainsi la vie privée des utilisateurs.
             </p>
           </div>
         </div>

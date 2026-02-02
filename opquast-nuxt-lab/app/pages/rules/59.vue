@@ -1,9 +1,13 @@
 <script setup>
+import { ref } from 'vue'
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 59
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
+
+// Logique pour l'exemple interactif
+const saveCard = ref(false)
 </script>
 
 <template>
@@ -54,20 +58,9 @@ const activeTab = ref('preview')
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
         Objectif
       </h2>
-
-      <ul class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
+      <ul class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300">
         <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
       </ul>
-      <ul
-        v-if="Array.isArray(rule.objectives)"
-        class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300"
-      >
-        <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
-      </ul>
-
-      <p v-else class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
-        {{ rule.objective }}
-      </p>
     </section>
 
     <!-- Mise en œuvre -->
@@ -75,12 +68,10 @@ const activeTab = ref('preview')
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
         Mise en œuvre
       </h2>
-
       <p v-if="rule.implementationIntro" class="mt-3 text-sm text-zinc-400">
         {{ rule.implementationIntro }}
       </p>
-
-      <ul class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
+      <ul class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300">
         <li v-for="x in rule.implementation" :key="x">{{ x }}</li>
       </ul>
     </section>
@@ -90,7 +81,6 @@ const activeTab = ref('preview')
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
         Contrôle
       </h2>
-
       <ul class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300">
         <li v-for="c in rule.control" :key="c">{{ c }}</li>
       </ul>
@@ -101,7 +91,6 @@ const activeTab = ref('preview')
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
         Screenshots
       </h2>
-
       <div class="flex gap-4 overflow-x-auto pb-4 scrollbar-light">
         <div
           v-for="(source, index) in rule.screenshotsSources"
@@ -111,7 +100,6 @@ const activeTab = ref('preview')
           <div
             class="aspect-[16/10] rounded-2xl border border-zinc-800 bg-zinc-900/20 overflow-hidden flex items-center justify-center"
           >
-            <!-- Image -->
             <a
               :href="`/screenshots/rule-${rule.id}/screenshot-${index + 1}.png`"
               target="_blank"
@@ -119,9 +107,7 @@ const activeTab = ref('preview')
               class="block cursor-zoom-in"
             >
               <img
-                :src="`/screenshots/rule-${rule.id}/screenshot-${
-                  index + 1
-                }.png`"
+                :src="`/screenshots/rule-${rule.id}/screenshot-${index + 1}.png`"
                 :alt="`Exemple d’application de la règle ${rule.id}`"
                 class="h-full w-full object-cover"
                 onerror="
@@ -129,28 +115,24 @@ const activeTab = ref('preview')
                   this.nextElementSibling.style.display = 'block'
                 "
               />
-            </a>
-
-            <!-- Placeholder -->
-            <div class="hidden text-center px-4">
-              <div class="text-sm text-zinc-300 font-medium">
-                Screenshot à ajouter
+              <div class="hidden text-center px-4">
+                <div class="text-sm text-zinc-300 font-medium">
+                  Screenshot à ajouter
+                </div>
+                <div class="mt-1 text-xs text-zinc-500">
+                  Exemple réel attendu
+                </div>
               </div>
-              <div class="mt-1 text-xs text-zinc-500">Exemple réel attendu</div>
-            </div>
+            </a>
           </div>
-
-          <!-- Source associée -->
           <div class="mt-2 text-xs text-zinc-500">
             Source :
             <a
               :href="source"
               target="_blank"
-              rel="noreferrer"
-              class="underline underline-offset-4 hover:text-zinc-300"
+              class="underline hover:text-zinc-300"
+              >{{ source }}</a
             >
-              {{ source }}
-            </a>
           </div>
         </div>
       </div>
@@ -161,7 +143,6 @@ const activeTab = ref('preview')
       <h2 class="text-lg font-semibold tracking-tight text-zinc-100">
         Exemples
       </h2>
-
       <div
         class="rounded-2xl border border-zinc-800 bg-zinc-900/30 overflow-hidden"
       >
@@ -178,7 +159,6 @@ const activeTab = ref('preview')
           >
             Rendu
           </button>
-
           <button
             @click="activeTab = 'code'"
             :class="[
@@ -194,88 +174,75 @@ const activeTab = ref('preview')
 
         <!-- Content -->
         <div class="p-6">
-          <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Exemple de formulaire respectant l'Opt-in pour les données
+              bancaires
             </div>
 
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
+            <div
+              class="rounded-xl border border-zinc-800 bg-zinc-950 p-6 max-w-md mx-auto"
+            >
+              <h3 class="text-base font-semibold text-zinc-100 mb-4">
+                Informations de paiement
               </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
-                <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
-                </p>
-              </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
-                </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
+
+              <div class="space-y-3">
+                <div
+                  class="p-3 border border-zinc-800 rounded bg-zinc-900/50 text-sm text-zinc-400"
+                >
+                  •••• •••• •••• 4242
+                </div>
+
+                <div
+                  class="flex items-start gap-3 p-3 bg-zinc-900/30 rounded-lg border border-zinc-800"
+                >
+                  <input
+                    type="checkbox"
+                    id="save_card"
+                    v-model="saveCard"
+                    class="mt-1 h-4 w-4 rounded border-zinc-700 bg-zinc-800 text-blue-600 focus:ring-blue-500"
+                  />
+                  <label
+                    for="save_card"
+                    class="text-sm text-zinc-300 cursor-pointer"
+                  >
+                    Mémoriser ma carte pour mes prochains achats.
+                    <span class="block text-xs text-zinc-500 mt-1"
+                      >Vos données sont sécurisées et vous pourrez les supprimer
+                      à tout moment.</span
+                    >
+                  </label>
+                </div>
+
+                <button
+                  class="w-full py-2 bg-zinc-100 text-zinc-900 rounded-lg font-medium text-sm hover:bg-zinc-200 transition"
+                >
+                  Payer la commande
                 </button>
               </div>
             </div>
           </div>
-          </div>
 
-          <!-- CODE -->
           <div v-else>
             <pre
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
-            >
-<code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
-  &lt;/div&gt;
-
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
-          &lt;/span&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
-</code>
-</pre>
-
+            ><code>&lt;!-- Règle 59 : La case doit être décochée par défaut (Opt-in) --&gt;
+&lt;div class="payment-option"&gt;
+  &lt;input 
+    type="checkbox" 
+    id="save-card" 
+    name="save-card"
+    :checked="false" 
+  /&gt;
+  &lt;label for="save-card"&gt;
+    Mémoriser ma carte pour mes prochains achats
+  &lt;/label&gt;
+&lt;/div&gt;</code></pre>
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              L'implémentation correcte garantit que l'utilisateur doit faire un
+              geste conscient pour autoriser la mémorisation de ses données
+              privées.
             </p>
           </div>
         </div>
@@ -286,8 +253,7 @@ const activeTab = ref('preview')
   <section v-else class="rounded-2xl border border-zinc-800 bg-zinc-900/30 p-6">
     <h1 class="text-lg font-semibold text-zinc-100">Règle introuvable</h1>
     <p class="mt-2 text-sm text-zinc-400">
-      Vérifiez que la règle existe dans
-      <code class="text-zinc-300">rules.json</code>.
+      Vérifiez que la règle existe dans <code>rules.json</code>.
     </p>
   </section>
 </template>
@@ -295,18 +261,8 @@ const activeTab = ref('preview')
 <style scoped>
 .scrollbar-light {
   scrollbar-color: transparent transparent;
-  border-radius: 4px;
-}
-.scrollbar-dark {
-  scrollbar-color: transparent transparent;
-  border-radius: 4px;
 }
 .scrollbar-light:hover {
-  scrollbar-color: #a3a3a3 transparent;
-  border-radius: 4px;
-}
-.scrollbar-dark:hover {
   scrollbar-color: #4d4d4d transparent;
-  border-radius: 4px;
 }
 </style>

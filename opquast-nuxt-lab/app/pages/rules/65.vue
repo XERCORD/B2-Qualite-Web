@@ -1,7 +1,7 @@
 <script setup>
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 65
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
 </script>
@@ -58,16 +58,6 @@ const activeTab = ref('preview')
       <ul class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
         <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
       </ul>
-      <ul
-        v-if="Array.isArray(rule.objectives)"
-        class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300"
-      >
-        <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
-      </ul>
-
-      <p v-else class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
-        {{ rule.objective }}
-      </p>
     </section>
 
     <!-- Mise en œuvre -->
@@ -197,31 +187,61 @@ const activeTab = ref('preview')
           <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Comparaison entre un produit disponible et un produit épuisé.
             </div>
 
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
-              </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
-                <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
-                </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
+              <!-- Produit Disponible -->
+              <div
+                class="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden"
+              >
+                <div class="h-40 bg-zinc-800 flex items-center justify-center">
+                  <span class="text-zinc-500">Image Produit</span>
+                </div>
+                <div class="p-4 space-y-3">
+                  <h3 class="font-medium text-zinc-100">T-Shirt Basique</h3>
+                  <div class="text-sm text-zinc-400">25,00 €</div>
+                  <button
+                    class="w-full rounded-lg bg-zinc-100 py-2 text-sm font-medium text-zinc-950 hover:bg-zinc-200 transition"
+                  >
+                    Ajouter au panier
+                  </button>
+                </div>
               </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
-                </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
-                </button>
+
+              <!-- Produit Indisponible -->
+              <div
+                class="rounded-xl border border-zinc-800 bg-zinc-950 overflow-hidden opacity-75"
+              >
+                <div
+                  class="relative h-40 bg-zinc-900 flex items-center justify-center"
+                >
+                  <span class="text-zinc-600">Image Produit</span>
+                  <div
+                    class="absolute inset-0 bg-black/40 flex items-center justify-center"
+                  >
+                    <span
+                      class="px-3 py-1 rounded-full bg-zinc-800/90 text-xs font-medium text-zinc-300 border border-zinc-700"
+                    >
+                      Épuisé
+                    </span>
+                  </div>
+                </div>
+                <div class="p-4 space-y-3">
+                  <h3 class="font-medium text-zinc-400">Sweat à capuche</h3>
+                  <div class="text-sm text-zinc-500 line-through">45,00 €</div>
+                  <button
+                    disabled
+                    class="w-full rounded-lg bg-zinc-800 py-2 text-sm font-medium text-zinc-500 cursor-not-allowed border border-zinc-700"
+                  >
+                    Rupture de stock
+                  </button>
+                  <p class="text-xs text-red-400 mt-1">
+                    Ce produit n'est plus disponible actuellement.
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
           </div>
 
           <!-- CODE -->
@@ -230,52 +250,45 @@ const activeTab = ref('preview')
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
             >
 <code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
+&lt;!-- Produit Indisponible : Traitement visuel et textuel --&gt;
+&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 opacity-75&quot;&gt;
+  
+  &lt;!-- Image avec calque assombrissant et badge --&gt;
+  &lt;div class=&quot;relative h-40 bg-zinc-900 flex items-center justify-center&quot;&gt;
+    &lt;img src=&quot;...&quot; alt=&quot;Sweat à capuche&quot; class=&quot;grayscale opacity-50&quot; /&gt;
+    
+    &lt;!-- Badge visuel explicite --&gt;
+    &lt;div class=&quot;absolute inset-0 flex items-center justify-center&quot;&gt;
+      &lt;span class=&quot;px-3 py-1 bg-zinc-800 text-xs font-medium text-zinc-300&quot;&gt;
+        Épuisé
+      &lt;/span&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
 
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
-          &lt;/span&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
+  &lt;div class=&quot;p-4 space-y-3&quot;&gt;
+    &lt;h3 class=&quot;font-medium text-zinc-400&quot;&gt;Sweat à capuche&lt;/h3&gt;
+    &lt;div class=&quot;text-sm text-zinc-500 line-through&quot;&gt;45,00 €&lt;/div&gt;
 
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
+    &lt;!-- Bouton désactivé avec texte clair --&gt;
+    &lt;button 
+      disabled 
+      class=&quot;w-full bg-zinc-800 py-2 text-sm text-zinc-500 cursor-not-allowed&quot;
+    &gt;
+      Rupture de stock
+    &lt;/button&gt;
+
+    &lt;!-- Information textuelle complémentaire --&gt;
+    &lt;p class=&quot;text-xs text-red-400&quot;&gt;
+      Ce produit n'est plus disponible actuellement.
+    &lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
-
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              Notez l'utilisation de la classe <code>opacity-75</code> pour le
+              conteneur, <code>grayscale</code> pour l'image, et surtout les
+              mentions textuelles explicites ("Épuisé", "Rupture de stock").
             </p>
           </div>
         </div>

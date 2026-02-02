@@ -1,7 +1,7 @@
 <script setup>
 import { getRuleById } from '~/data/rules'
 
-const ruleId = 10
+const ruleId = 215
 const rule = getRuleById(ruleId)
 const activeTab = ref('preview')
 </script>
@@ -55,9 +55,6 @@ const activeTab = ref('preview')
         Objectif
       </h2>
 
-      <ul class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
-        <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
-      </ul>
       <ul
         v-if="Array.isArray(rule.objectives)"
         class="mt-3 list-disc pl-5 space-y-2 text-sm text-zinc-300"
@@ -65,7 +62,7 @@ const activeTab = ref('preview')
         <li v-for="o in rule.objectives" :key="o">{{ o }}</li>
       </ul>
 
-      <p v-else class="mt-1 list-disc pl-5 space-y-2 text-sm text-zinc-300">
+      <p v-else class="mt-1 text-sm text-zinc-300">
         {{ rule.objective }}
       </p>
     </section>
@@ -197,31 +194,73 @@ const activeTab = ref('preview')
           <!-- RENDU -->
           <div v-if="activeTab === 'preview'" class="space-y-4">
             <div class="text-sm text-zinc-400">
-              Exemple de rubrique visible dès la page d’accueil
+              Exemple d&apos;opération sécurisée avec deux moyens de validation
             </div>
 
             <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-            <div class="rounded-xl border border-zinc-800 bg-zinc-950 p-5">
-              <h3 class="text-base font-semibold text-zinc-100 mb-3">
-                Aperçu de votre commentaire
+              <h3 class="text-lg font-semibold text-zinc-100 mb-4">
+                Choix du mode de validation pour une connexion sensible
               </h3>
-              
-              <div class="rounded border border-zinc-700 bg-zinc-900 p-4 mb-3">
+
+              <form class="space-y-4" @submit.prevent>
                 <p class="text-sm text-zinc-300">
-                  Votre message apparaîtra comme ceci une fois publié.
+                  Pour valider votre connexion, choisissez l&apos;un des moyens
+                  suivants&nbsp;:
                 </p>
-              </div>
-              
-              <div class="flex gap-2">
-                <button class="px-4 py-2 text-sm rounded bg-zinc-700 text-zinc-200 hover:bg-zinc-600">
-                  Modifier
+
+                <fieldset class="space-y-3">
+                  <legend class="text-sm font-medium text-zinc-200">
+                    Méthode de validation
+                  </legend>
+
+                  <div class="space-y-2">
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-200 cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name="mfa"
+                        value="sms"
+                        class="mt-1"
+                      />
+                      <span>
+                        <span class="block font-medium">Code SMS</span>
+                        <span class="block text-xs text-zinc-400">
+                          Un code est envoyé sur votre téléphone portable.
+                        </span>
+                      </span>
+                    </label>
+
+                    <label
+                      class="flex items-start gap-3 rounded-lg border border-zinc-800 bg-zinc-900 px-3 py-2 text-sm text-zinc-200 cursor-pointer"
+                    >
+                      <input
+                        type="radio"
+                        name="mfa"
+                        value="app"
+                        class="mt-1"
+                      />
+                      <span>
+                        <span class="block font-medium">
+                          Application d&apos;authentification
+                        </span>
+                        <span class="block text-xs text-zinc-400">
+                          Validez la connexion dans votre application
+                          d&apos;authentification.
+                        </span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <button
+                  type="submit"
+                  class="inline-flex items-center rounded-md bg-zinc-100 px-4 py-2 text-sm font-medium text-zinc-900 hover:bg-zinc-200 transition"
+                >
+                  Continuer
                 </button>
-                <button class="px-4 py-2 text-sm rounded bg-blue-600 text-white hover:bg-blue-500">
-                  Publier
-                </button>
-              </div>
+              </form>
             </div>
-          </div>
           </div>
 
           <!-- CODE -->
@@ -230,52 +269,34 @@ const activeTab = ref('preview')
               class="rounded-xl bg-zinc-950 p-5 overflow-x-auto text-sm text-zinc-100"
             >
 <code>
-&lt;div class=&quot;rounded-xl border border-zinc-800 bg-zinc-950 p-5&quot;&gt;
-  &lt;div class=&quot;flex items-center justify-between&quot;&gt;
-    &lt;h3 class=&quot;text-base font-semibold text-zinc-100&quot;&gt;
-      Quoi de neuf ?
-    &lt;/h3&gt;
-    &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;Actualités du site&lt;/span&gt;
-  &lt;/div&gt;
+&lt;form&gt;
+  &lt;p&gt;
+    Pour valider votre connexion, choisissez l&apos;un des moyens suivants&nbsp;:
+  &lt;/p&gt;
 
-  &lt;ul class=&quot;mt-4 space-y-3&quot;&gt;
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;div class=&quot;flex items-center gap-2&quot;&gt;
-          &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-            Nouvelle fonctionnalité publiée
-          &lt;/span&gt;
-          &lt;span
-            class=&quot;text-[11px] uppercase tracking-wide rounded-full border border-zinc-700 bg-zinc-900 px-2 py-0.5 text-zinc-200&quot;
-          &gt;
-            Nouveau
-          &lt;/span&gt;
-        &lt;/div&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Mise en ligne d’un nouveau service accessible depuis l’accueil.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;05/01/2026&lt;/span&gt;
-    &lt;/li&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Méthode de validation&lt;/legend&gt;
 
-    &lt;li class=&quot;flex items-start justify-between gap-4&quot;&gt;
-      &lt;div&gt;
-        &lt;span class=&quot;text-sm font-medium text-zinc-100&quot;&gt;
-          Mise à jour du contenu éditorial
-        &lt;/span&gt;
-        &lt;p class=&quot;text-sm text-zinc-400&quot;&gt;
-          Actualisation des informations principales du site.
-        &lt;/p&gt;
-      &lt;/div&gt;
-      &lt;span class=&quot;text-xs text-zinc-500&quot;&gt;03/01/2026&lt;/span&gt;
-    &lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/div&gt;
+    &lt;label&gt;
+      &lt;input type="radio" name="mfa" value="sms" /&gt;
+      Code SMS (un code est envoyé sur votre téléphone portable)
+    &lt;/label&gt;
+
+    &lt;label&gt;
+      &lt;input type="radio" name="mfa" value="app" /&gt;
+      Application d&apos;authentification (validation dans l&apos;appli)
+    &lt;/label&gt;
+  &lt;/fieldset&gt;
+
+  &lt;button type="submit"&gt;Continuer&lt;/button&gt;
+&lt;/form&gt;
 </code>
 </pre>
 
             <p class="mt-3 text-xs text-zinc-500">
-              La prévisualisation permet de vérifier avant de publier.
+              L&apos;interface propose au moins deux moyens distincts de
+              validation pour une opération sécurisée, ce qui limite les
+              risques d&apos;échec liés à un seul canal (ex. téléphone perdu).
             </p>
           </div>
         </div>

@@ -48,9 +48,58 @@
     "objective": "Assurer que les informations essentielles sont facilement accessibles et compréhensibles pour tous les utilisateurs, y compris ceux ayant des besoins spécifiques."
   },
   {
+    "id": 8,
+    "title": "Les contenus publicitaires ou sponsorisés sont identifiés comme tels.",
+    "authors": ["Abdulmalek ESUGHI"],
+    "path": "/rules/8",
+    "description": "Contenu éditorial ou publicitaire ? Article de fond ou publireportage ? Avis impartial ou billet sponsorisé ? Mieux vaut préciser de quoi il s'agit, ainsi les internautes sauront à quoi s'en tenir et n'auront rien à vous reprocher.",
+    "tags": ["Conception", "Contenus", "Editorial", "SEO", "Écoconception"],
+    "objectives": [
+      "Permettre aux utilisateurs d'identifier les contenus publicitaires et sponsorisés.",
+      "Respecter les règles de transparence et de confiance envers les utilisateurs."
+    ],
+    "implementationIntro": "Identifier clairement tout contenu publicitaire ou sponsorisé.",
+    "implementation": [
+      "Ajouter une mention explicite « Publicité » ou « Sponsorisé » avant le contenu",
+      "Utiliser une mise en page ou une couleur différente pour les contenus publicitaires",
+      "Inclure une mention légale précisant la nature publicitaire du contenu"
+    ],
+    "control": [
+      "Vérifier que tout contenu publicitaire porte une mention explicite.",
+      "Vérifier que les utilisateurs peuvent facilement identifier les contenus sponsorisés."
+    ],
+    "screenshotsSources": [
+      "https://www.service-public.fr/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Les conditions de modération des espaces publics sont indiquées.",
+    "path": "/rules/9",
+    "authors": ["Abdulmalek ESUGHI"],
+    "tags": ["Contenus", "Editorial"],
+    "objectives": [
+      "Informer les utilisateurs des règles de modération des espaces publics.",
+      "Assurer la transparence concernant les contenus autorisés et interdits."
+    ],
+    "implementationIntro": "Afficher clairement les conditions de modération des espaces publics.",
+    "implementation": [
+      "Publier les conditions de modération de manière visible",
+      "Indiquer quels types de contenus sont autorisés ou interdits",
+      "Expliquer les conséquences du non-respect des règles"
+    ],
+    "control": [
+      "Vérifier la présence de conditions de modération dans les espaces publics.",
+      "Vérifier que les conditions sont faciles à trouver et à comprendre."
+    ],
+    "screenshotsSources": ["", "", ""]
+  },
+  {
     "id": 10,
     "title": "Les contenus ou fichiers destinés à des espaces publics peuvent être vérifiés avant leur envoi définitif.",
-    "authors": ["Marco BARONI"],
+    "authors": ["Abdulmalek ESUGHI"],
     "path": "/rules/10",
     "description": "Il est fort agaçant de voir publier un message sous une forme dégradée ou de constater après envoi que l’on a écrit une grosse bêtise. La prévisualisation permet de voir les contenus en contexte et donne la possibilité de les corriger ou de les peaufiner.",
     "tags": ["Contenus", "Développement"],
@@ -59,17 +108,727 @@
       "Diminuer le nombre de demandes de rectification ou de suppression."
     ],
     "implementationIntro": "Mettre en place une prévisualisation des informations saisies avant la soumission définitive du formulaire, avec possibilité de les modifier.",
-    "implementation": [],
+    "implementation": [
+      "Afficher un aperçu du contenu avant publication",
+      "Permettre la modification du contenu en prévisualisation",
+      "Ajouter un bouton de confirmation final"
+    ],
     "control": [
       "Pour chaque espace public du site (zone de commentaire, forum, page personnelle publique, avatar, portfolio de documents, etc.) :",
       "Saisir des informations destinées à être rendues publiques telles que des images associées à un compte ou un commentaire.",
       "Vérifier que la soumission définitive du formulaire de saisie est précédée d'une étape permettant, si l'utilisateur le souhaite, de contrôler et de modifier le résultat de sa saisie avant publication."
     ],
+    "screenshotsSources": ["", "", ""]
+  },
+  {
+    "id": 11,
+    "title": "Les espaces publics proposent au moins un moyen de signaler les abus.",
+    "path": "/rules/11",
+    "authors": ["Abdulmalek ESUGHI"],
+    "tags": ["Conception", "Contenus"],
+    "objectives": [
+      "Permettre aux utilisateurs de signaler les contenus abusifs ou inappropriés.",
+      "Assurer une modération efficace des espaces publics."
+    ],
+    "implementationIntro": "Mettre en place un système de signalement des abus dans les espaces publics.",
+    "implementation": [
+      "Ajouter un bouton ou un lien « Signaler » visible sur chaque contenu",
+      "Mettre en place un formulaire simple pour signaler les abus",
+      "Définir une procédure de traitement des signalements"
+    ],
+    "control": [
+      "Vérifier la présence d'un moyen de signaler les abus dans les espaces publics.",
+      "Vérifier que ce moyen est facilement accessible et fonctionnel."
+    ],
+    "screenshotsSources": ["", "", ""]
+  },
+  {
+    "id": 12,
+    "title": "Chaque graphique est accompagné de ses données numériques.",
+    "path": "/rules/12",
+    "authors": ["Abdulmalek ESUGHI"],
+    "tags": ["Accessibilité", "Conception", "Contenus", "Editorial", "SEO"],
+    "objectives": [
+      "Rendre les graphiques accessibles à tous les utilisateurs.",
+      "Permettre la réutilisation et la vérification des données."
+    ],
+    "implementationIntro": "Accompagner chaque graphique de ses données numériques source.",
+    "implementation": [
+      "Afficher un tableau de données numériques avec le graphique",
+      "Fournir un lien de téléchargement des données",
+      "Ajouter une description textuelle du graphique"
+    ],
+    "control": [
+      "Vérifier que chaque graphique dispose de ses données numériques.",
+      "Vérifier que les utilisateurs peuvent accéder aux données même sans affichage graphique."
+    ],
+    "screenshotsSources": ["", "", ""]
+  },
+  {
+    "id": 13,
+    "title": "La page des résultats de recherche indique le nombre de résultats, le nombre de pages de résultats, et le nombre de résultats par page.",
+    "path": "/rules/13",
+    "authors": ["Abdulmalek ESUGHI"],
+    "tags": ["Conception", "Contenus", "Développement"],
+    "objectives": [
+      "Aider l'utilisateur à évaluer rapidement le volume de résultats.",
+      "Permettre une navigation efficace dans les résultats de recherche."
+    ],
+    "implementationIntro": "Afficher clairement les informations de pagination sur la page de résultats.",
+    "implementation": [
+      "Afficher le nombre total de résultats trouvés",
+      "Indiquer le nombre de pages disponibles",
+      "Afficher le nombre de résultats affichés par page",
+      "Permettre de modifier le nombre de résultats par page"
+    ],
+    "control": [
+      "Effectuer une recherche sur le site.",
+      "Vérifier que le nombre total de résultats est affiché.",
+      "Vérifier que le nombre de pages est indiqué.",
+      "Vérifier que le nombre de résultats par page est visible."
+    ],
+    "screenshotsSources": ["", "", ""]
+  },
+  {
+    "id": 14,
+    "title": "Les contenus ne détournent pas de caractères pour simuler une mise en forme visuelle.",
+    "path": "/rules/14",
+    "authors": ["Abdulmalek ESUGHI"],
+    "tags": ["Accessibilité", "Contenus", "Editorial", "SEO"],
+    "objectives": [
+      "Assurer l'accessibilité des contenus pour tous les utilisateurs.",
+      "Améliorer la lisibilité et la compréhension du contenu."
+    ],
+    "implementationIntro": "Utiliser les balises HTML appropriées plutôt que des caractères détournés.",
+    "implementation": [
+      "Utiliser les titres HTML (h1, h2, h3) au lieu d'astérisques ou points",
+      "Utiliser les listes HTML au lieu de tirets ou numéros détournés",
+      "Utiliser l'emphase HTML (strong, em) au lieu d'astérisques ou majuscules",
+      "Utiliser CSS pour la mise en forme visuelle"
+    ],
+    "control": [
+      "Vérifier que les titres utilisent les balises HTML appropriées.",
+      "Vérifier qu'aucun caractère ne remplace une balise de sémantique.",
+      "Vérifier la lisibilité du code source par les lecteurs d'écran."
+    ],
+    "screenshotsSources": ["", "", ""]
+  },
+
+  {
+    "id": 58,
+    "title": "Au moins deux moyens de paiement sont acceptés.",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/58",
+    "description": "Certains internautes n’ont pas de chéquier, d’autres n’ont pas de carte de crédit ou bien leur carte de crédit a expiré. La présence d’un moyen de paiement alternatif permet de ne pas perdre ces clients.",
+    "tags": ["Basics", "E-Commerce"],
+    "objectives": [
+      "Permettre aux utilisateurs de choisir le mode de paiement qui leur convient le mieux.",
+      "Fournir une alternative en cas d'impossibilité d'utiliser un moyen de paiement précis."
+    ],
+    "implementationIntro": "Sur la page de paiement, proposez plusieurs options distinctes.",
+    "implementation": [
+      "Intégrer au moins deux types de paiement (ex: Carte Bancaire + PayPal).",
+      "Afficher clairement les icônes des modes de paiement acceptés.",
+      "Permettre le paiement par virement ou chèque si le paiement électronique échoue."
+    ],
+    "control": [
+      "Simuler un achat jusqu'à l'étape du paiement.",
+      "Vérifier la présence d'au moins deux options de règlement différentes."
+    ],
+    "screenshotsSources": ["https://www.decathlon.fr", "https://www.fnac.com"]
+  },
+
+  {
+    "id": 59,
+    "title": "Les données bancaires ne sont mémorisées qu'après consentement explicite de l'utilisateur",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/59",
+    "description": "L'enregistrement des coordonnées bancaires pour des achats ultérieurs ne doit jamais être automatique. Il doit résulter d'une action volontaire (opt-in) de l'utilisateur.",
+    "tags": [
+      "Basics",
+      "Accessibilité",
+      "Développement",
+      "E-Commerce",
+      "Privacy"
+    ],
+    "objectives": [
+      "Laisser l’utilisateur maître de ses choix en matière de mémorisation de données bancaires.",
+      "Prévenir d’éventuels problèmes juridiques en cas de plainte ou de vol de données.",
+      "Renforcer la confiance des utilisateurs sur l’utilisation de leurs données."
+    ],
+    "implementationIntro": "Le consentement doit être recueilli de manière éclairée et active :",
+    "implementation": [
+      "Ne pas enregistrer automatiquement les données de paiement.",
+      "Proposer une case à cocher (checkbox) non cochée par défaut pour la mémorisation.",
+      "Informer l'utilisateur sur la finalité de cet enregistrement (ex: facilité pour les prochaines commandes)."
+    ],
+    "control": [
+      "Simuler un processus de commande jusqu'au paiement.",
+      "Vérifier que les données bancaires ne sont pas mémorisées par défaut.",
+      "Vérifier que l'option d'enregistrement nécessite une validation explicite (opt-in)."
+    ],
     "screenshotsSources": [
-      "https://www.gmail.com/",
-      "https://www.nuxt.com/blog",
-      "https://developer.mozilla.org/fr/"
+      "https://www.amazon.fr",
+      "https://pay.google.com",
+      "https://www.fnac.com"
     ]
+  },{
+    "id": 65,
+    "title": "Les produits indisponibles font l'objet d'une différenciation visuelle et textuelle",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/65",
+    "description": "Tout produit qui n'est pas disponible à l'achat doit être clairement distinguable des produits en stock, à la fois par son apparence et par une mention écrite.",
+    "tags": ["E-commerce", "Information", "Navigation"],
+    "objectives": [
+      "Éviter la frustration de l'utilisateur qui tente d'acheter un produit qu'il ne peut pas recevoir.",
+      "Permettre à l'utilisateur d'identifier rapidement les produits qu'il peut réellement acquérir.",
+      "Renforcer la crédibilité et la transparence du site marchand."
+    ],
+    "implementationIntro": "La différenciation doit être double : visuelle (pour le scan rapide) et textuelle (pour la certitude et l'accessibilité).",
+    "implementation": [
+      "Ajouter une mention explicite 'Épuisé', 'Indisponible' ou 'Rupture de stock' visible sans survol.",
+      "Modifier l'aspect visuel du produit (opacité réduite, niveau de gris, badge spécifique).",
+      "Désactiver le bouton d'ajout au panier et modifier son libellé.",
+      "S'assurer que l'information est disponible pour les lecteurs d'écran via du texte caché ou des attributs aria."
+    ],
+    "control": [
+      "Dans les listes de produits, vérifier que les articles hors stock sont visuellement distincts.",
+      "Vérifier la présence d'une mention textuelle explicite (pas uniquement une couleur rouge par exemple).",
+      "Contrôler que le bouton d'action est désactivé ou remplacé par une alerte."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/",
+      "https://www.decathlon.fr/",
+      "https://www.asos.com/fr/"
+    ]
+  },{
+    "id": 66,
+    "title": "Un mail indiquant la référence de la transaction et les données de la commande est envoyé suite à la validation",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/66",
+    "description": "Après validation d'un achat ou d'une commande, l'utilisateur doit recevoir un courriel récapitulatif contenant une référence unique et le détail de sa transaction.",
+    "tags": ["E-commerce", "Sécurité", "Confiance"],
+    "objectives": [
+      "Permettre à l'utilisateur de conserver une trace contractuelle de sa commande.",
+      "Rassurer l'utilisateur sur la bonne prise en compte de sa transaction.",
+      "Faciliter les échanges ultérieurs avec le service client grâce à la référence."
+    ],
+    "implementationIntro": "Cet email doit être envoyé automatiquement (transactionnel) immédiatement après le paiement.",
+    "implementation": [
+      "Configurer le système e-commerce pour envoyer un mail de confirmation automatique.",
+      "Inclure impérativement : le numéro de commande, la liste des produits/services, le montant total et les coordonnées du vendeur.",
+      "S'assurer que l'email ne tombe pas en spam (authentification SPF/DKIM)."
+    ],
+    "control": [
+      "Effectuer une commande test complète.",
+      "Vérifier la réception du mail de confirmation dans les minutes qui suivent.",
+      "Contrôler la présence de la référence unique et de l'exactitude des données (produits, prix)."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/",
+      "https://www.fnac.com/",
+      "https://www.ubereats.com/"
+    ]
+  },{
+    "id": 67,
+    "title": "Chaque réclamation fait l'objet d'un accusé de réception",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/67",
+    "description": "L'utilisateur doit avoir la certitude immédiate que sa réclamation a été transmise au service concerné via une notification visuelle et/ou un email.",
+    "tags": ["Contact", "Service Client", "Feedback"],
+    "objectives": [
+      "Rassurer l'utilisateur sur la prise en compte de son problème.",
+      "Fournir une référence (numéro de ticket) pour le suivi de la demande.",
+      "Informer l'utilisateur des délais de traitement prévisibles."
+    ],
+    "implementationIntro": "L'accusé de réception ne doit pas se contenter d'un simple 'Message envoyé', mais engager la responsabilité du service.",
+    "implementation": [
+      "Afficher un message de confirmation explicite immédiatement après l'envoi du formulaire.",
+      "Envoyer automatiquement un courriel contenant le récapitulatif de la demande et un numéro de dossier.",
+      "Indiquer si possible le délai moyen de réponse."
+    ],
+    "control": [
+      "Envoyer une réclamation via le formulaire de contact ou l'interface de support.",
+      "Vérifier l'affichage immédiat du message de succès.",
+      "Vérifier la réception de l'email de confirmation contenant une référence de suivi."
+    ],
+    "screenshotsSources": [
+      "https://www.ovhcloud.com/fr/",
+      "https://www.paypal.com/fr/disputes/",
+      "https://www.sncf-connect.com/aide"
+    ]
+  },{
+    "id": 68,
+    "title": "La provenance des produits est indiquée",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/68",
+    "description": "L'origine de fabrication ou d'assemblage des produits vendus doit être clairement affichée sur la fiche produit pour informer le consommateur.",
+    "tags": ["E-commerce", "Transparence", "RSE"],
+    "objectives": [
+      "Permettre au consommateur de faire un choix éclairé (critères éthiques, écologiques, politiques).",
+      "Valoriser les circuits courts ou le savoir-faire local.",
+      "Renforcer la confiance en affichant une transparence totale sur la chaîne d'approvisionnement."
+    ],
+    "implementationIntro": "L'information ne doit pas être cachée dans les conditions générales, mais visible directement sur la fiche produit.",
+    "implementation": [
+      "Ajouter un champ 'Pays de fabrication' ou 'Origine' dans la base de données produits.",
+      "Afficher cette information à proximité du prix ou de la description technique.",
+      "Si possible, distinguer le lieu de fabrication du lieu de provenance des matières premières."
+    ],
+    "control": [
+      "Naviguer sur plusieurs fiches produits.",
+      "Vérifier la présence d'une mention 'Fabriqué en...' ou 'Origine : ...'.",
+      "Vérifier que l'information est compréhensible sans ambiguïté."
+    ],
+    "screenshotsSources": [
+      "https://www.leslipfrancais.fr/",
+      "https://www.patagonia.com/",
+      "https://www.biocoop.fr/"
+    ]
+  },{
+    "id": 69,
+    "title": "Chaque champ de formulaire est associé dans le code source à une étiquette qui lui est propre",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/69",
+    "description": "Tout élément de formulaire permettant une interaction (input, select, textarea) doit être programmatiquement relié à son libellé via l'attribut 'label' ou 'aria-label'.",
+    "tags": ["Accessibilité", "Formulaires", "Code"],
+    "objectives": [
+      "Permettre aux lecteurs d'écran d'annoncer la fonction du champ lorsqu'il reçoit le focus.",
+      "Agrandir la zone de clic : cliquer sur le libellé active le champ (très utile sur mobile).",
+      "Améliorer le référencement naturel en structurant sémantiquement les formulaires."
+    ],
+    "implementationIntro": "L'association visuelle (placer le texte à côté du champ) ne suffit pas. L'association doit être dans le code.",
+    "implementation": [
+      "Utiliser la balise <label> avec l'attribut 'for' pointant vers l'attribut 'id' du champ.",
+      "Alternativement, imbriquer le champ <input> directement à l'intérieur de la balise <label>.",
+      "Pour les champs sans libellé visible (ex: barre de recherche), utiliser 'aria-label' ou un label caché avec une classe CSS 'sr-only'."
+    ],
+    "control": [
+      "Inspecter le code source et vérifier la correspondance for/id.",
+      "Cliquer sur le texte du label : le curseur doit se placer automatiquement dans le champ.",
+      "Utiliser un lecteur d'écran (NVDA, VoiceOver) : le nom du champ doit être lu à la prise de focus."
+    ],
+    "screenshotsSources": [
+      "https://www.service-public.fr/",
+      "https://github.com/signup",
+      "https://accounts.google.com/"
+    ]
+  },{
+    "id": 70,
+    "title": "Les informations complétant l'étiquette d'un champ sont associées à celui-ci dans le code source",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/70",
+    "description": "Lorsque des informations supplémentaires (format de saisie, message d'erreur, unité de mesure) accompagnent un champ, elles doivent être reliées techniquement à celui-ci pour être perçues par les technologies d'assistance.",
+    "tags": ["Accessibilité", "Formulaires", "WAI-ARIA"],
+    "objectives": [
+      "Permettre aux utilisateurs non-voyants de connaître le format attendu (ex: JJ/MM/AAAA) avant de remplir le champ.",
+      "Garantir que les messages d'erreur sont lus automatiquement lorsque l'utilisateur corrige sa saisie.",
+      "Éviter les erreurs de saisie en rendant les contraintes explicites pour tous."
+    ],
+    "implementationIntro": "La simple proximité visuelle ne suffit pas. L'utilisation de l'attribut ARIA 'aria-describedby' est la méthode standard.",
+    "implementation": [
+      "Attribuer un 'id' unique à l'élément contenant le texte d'aide ou l'erreur.",
+      "Ajouter l'attribut 'aria-describedby' sur le champ <input>, <select> ou <textarea>.",
+      "Faire pointer cet attribut vers l'identifiant du texte d'aide (ex: aria-describedby='help-text-id')."
+    ],
+    "control": [
+      "Inspecter le code source : vérifier la présence de 'aria-describedby'.",
+      "Vérifier que la valeur de cet attribut correspond bien à un 'id' existant dans la page.",
+      "Tester avec un lecteur d'écran : l'aide doit être vocalisée après le label lors de la prise de focus."
+    ],
+    "screenshotsSources": [
+      "https://www.service-public.fr/",
+      "https://getbootstrap.com/docs/5.3/forms/overview/",
+      "https://github.com/signup"
+    ]
+  },{
+    "id": 71,
+    "title": "L'étiquette de chaque champ de formulaire indique si la saisie est obligatoire",
+    "authors": ["Timothé Champieux"],
+    "path": "/rules/71",
+    "description": "L'utilisateur doit pouvoir distinguer immédiatement les champs qu'il est obligé de remplir de ceux qui sont optionnels, avant même de valider le formulaire.",
+    "tags": ["Formulaires", "Accessibilité", "Ergonomie"],
+    "objectives": [
+      "Prévenir les erreurs de saisie lors de la validation du formulaire.",
+      "Accélérer le remplissage en permettant à l'utilisateur de n'aller qu'à l'essentiel.",
+      "Garantir l'accessibilité de l'information pour les utilisateurs de lecteurs d'écran."
+    ],
+    "implementationIntro": "La convention la plus courante est l'astérisque, mais la mention explicite '(obligatoire)' ou '(facultatif)' fonctionne aussi.",
+    "implementation": [
+      "Ajouter un signe distinctif (astérisque, mention texte) dans le libellé <label>.",
+      "Si un symbole est utilisé (comme *), ajouter une légende explicative en début de formulaire.",
+      "Ajouter l'attribut standard 'required' dans la balise <input>.",
+      "Utiliser 'aria-required=\"true\"' si l'attribut HTML5 ne suffit pas dans certains contextes complexes."
+    ],
+    "control": [
+      "Vérifier visuellement la présence de l'indicateur sur tous les champs obligatoires.",
+      "Vérifier la présence de la légende si un symbole est utilisé.",
+      "Vérifier la présence de l'attribut 'required' dans le code source."
+    ],
+    "screenshotsSources": [
+      "https://www.laposte.fr/",
+      "https://www.service-public.fr/",
+      "https://www.fnac.com/"
+    ]
+  },
+
+  {
+    "id": 60,
+    "title": "Les données bancaires mémorisées peuvent être modifiées ou supprimées",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/60",
+    "description": "Les utilisateurs doivent pouvoir accéder à tout moment à la gestion de leurs moyens de paiement enregistrés pour les mettre à jour ou les supprimer définitivement.",
+    "tags": ["Basics", "Développement", "E-Commerce", "Privacy"],
+    "objectives": [
+      "Prévenir les risques de fraude en permettant la suppression préventive des données.",
+      "Donner aux utilisateurs la maîtrise de leurs données bancaires.",
+      "Prévenir les erreurs de paiement en permettant la mise à jour des données expirées.",
+      "Renforcer la confiance des utilisateurs."
+    ],
+    "implementationIntro": "Le site doit proposer un espace de gestion dédié dans le compte utilisateur :",
+    "implementation": [
+      "Créer une rubrique 'Moyens de paiement' dans l'espace client.",
+      "Afficher la liste des cartes mémorisées (en masquant les numéros centraux).",
+      "Proposer un bouton 'Supprimer' clair pour chaque moyen de paiement.",
+      "Permettre la modification des informations (date d'expiration, nom)."
+    ],
+    "control": [
+      "Se connecter à un compte client ayant une carte enregistrée.",
+      "Vérifier qu'une option de suppression est présente et fonctionnelle.",
+      "Vérifier qu'une option de modification est disponible."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/gp/css/homepage.html",
+      "https://www.paypal.com/myaccount/money/",
+      "https://www.netflix.com/YourAccount"
+    ]
+  },
+
+  {
+    "id": 61,
+    "title": "La référence de la transaction est affichée au client après la validation de sa commande",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/61",
+    "description": "Chaque transaction doit posséder un identifiant unique affiché dès la confirmation de l'achat pour permettre son suivi et servir de preuve en cas de réclamation.",
+    "tags": ["Conception", "Développement", "E-Commerce"],
+    "objectives": [
+      "Permettre aux utilisateurs d’afficher et d’imprimer une trace de leur commande.",
+      "Fournir aux utilisateurs une preuve écrite de l’opération effectuée.",
+      "Renforcer la traçabilité de la transaction."
+    ],
+    "implementationIntro": "Dès que le paiement est validé, le site doit générer une vue de confirmation :",
+    "implementation": [
+      "Générer un numéro de commande ou de transaction unique.",
+      "Afficher ce numéro de manière très visible sur la page de succès (Thank-you page).",
+      "Préciser que ce numéro a également été envoyé par e-mail.",
+      "Proposer un bouton d'impression de la page de confirmation."
+    ],
+    "control": [
+      "Mener une procédure de commande complète jusqu'au paiement.",
+      "Vérifier que la référence (ex: Commande n° FR-2024-849) apparaît sur la page finale."
+    ],
+    "screenshotsSources": [
+      "https://www.apple.com/fr/shop/bag",
+      "https://www.amazon.fr/gp/history",
+      "https://www.fnac.com"
+    ]
+  },
+
+  {
+    "id": 62,
+    "title": "Les factures émises sont également disponibles en ligne",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/62",
+    "description": "Les factures sont des documents essentiels pour la gestion privée ou professionnelle. Le site doit permettre de les consulter et de les télécharger directement depuis l'espace client.",
+    "tags": ["Basics", "Développement", "E-Commerce"],
+    "objectives": [
+      "Faciliter les opérations de gestion et de rapprochement par les utilisateurs.",
+      "Fournir une sauvegarde des données nécessaires à la comptabilité.",
+      "Éviter la perte d'informations en cas de suppression accidentelle d'un e-mail."
+    ],
+    "implementationIntro": "Le site doit centraliser les documents d'achat dans l'espace personnel :",
+    "implementation": [
+      "Créer une section 'Mes factures' ou 'Historique de commandes' dans le compte utilisateur.",
+      "Générer les factures au format PDF pour garantir l'intégrité de la mise en page.",
+      "Assurer la pérennité de l'accès (les factures doivent rester disponibles plusieurs années).",
+      "Permettre le téléchargement en un clic."
+    ],
+    "control": [
+      "Réaliser un achat sur le site.",
+      "Se rendre dans l'espace client une fois la commande validée.",
+      "Vérifier que la facture correspondante est présente et téléchargeable."
+    ],
+    "screenshotsSources": [
+      "https://www.amazon.fr/gp/css/order-history",
+      "https://www.ovhcloud.com/fr/billing/invoices/",
+      "https://www.sfr.fr/espace-client/factures"
+    ]
+  },
+
+  {
+    "id": 63,
+    "title": "Chaque facturation fait l'objet d'un mail de confirmation",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/63",
+    "description": "L'envoi systématique de la facture par e-mail permet à l'utilisateur de conserver une trace de ses achats, indépendamment de la disponibilité future du site ou de son compte en ligne.",
+    "tags": ["Basics", "Accessibilité", "Développement", "E-Commerce"],
+    "objectives": [
+      "Prévenir les pertes d’information et de factures en cas de fermeture de service.",
+      "Améliorer la traçabilité des opérations pour l'utilisateur.",
+      "Permettre une gestion documentaire autonome (archivage personnel)."
+    ],
+    "implementationIntro": "Le système de commande doit déclencher un envoi automatique :",
+    "implementation": [
+      "Configurer un serveur de mail (SMTP) lié au processus de validation de commande.",
+      "Joindre la facture au format PDF ou inclure un lien de téléchargement direct et pérenne.",
+      "S'assurer que l'objet du mail contient la référence de la commande pour faciliter la recherche.",
+      "Inclure les informations légales (TVA, coordonnées du vendeur) dans le corps du mail."
+    ],
+    "control": [
+      "Réaliser une commande test sur le site.",
+      "Vérifier la réception immédiate d'un e-mail de confirmation.",
+      "Vérifier que cet e-mail contient bien la facture ou un accès direct à celle-ci."
+    ],
+    "screenshotsSources": [
+      "https://www.apple.com/fr/",
+      "https://www.amazon.fr",
+      "https://www.uber.com/fr/"
+    ]
+  },
+
+  {
+    "id": 64,
+    "title": "Les mentions d'appartenance à un ordre ou groupe professionnel, d'un label ou d'une récompense sont accompagnées d'un lien vers la source",
+    "authors": ["Romain Bourdot"],
+    "path": "/rules/64",
+    "description": "Si vous mentionnez des tiers valorisants (labels, récompenses, ordres professionnels), l’internaute doit pouvoir vérifier la crédibilité de ces informations via un lien vers la source officielle.",
+    "tags": ["E-Commerce", "Éditorial", "Confiance"],
+    "objectives": [
+      "Donner un accès immédiat à l'utilisateur pour lui permettre de comprendre de quoi il s'agit.",
+      "Permettre à l'utilisateur de vérifier par lui-même l'information.",
+      "Accroître le degré de confiance ou de crédibilité du site."
+    ],
+    "implementationIntro": "Chaque logo ou mention de distinction doit être cliquable :",
+    "implementation": [
+      "Identifier tous les labels (Bio, Label Rouge, etc.) ou récompenses (Élu produit de l'année).",
+      "Ajouter un lien hypertexte sur le logo ou le texte vers le site de l'organisme émetteur.",
+      "Utiliser de préférence un lien ouvrant dans un nouvel onglet pour ne pas perdre l'utilisateur.",
+      "Ajouter un attribut 'title' ou 'aria-label' pour expliciter la destination du lien."
+    ],
+    "control": [
+      "Rechercher les logos de labels ou de récompenses sur le site (souvent en footer ou page à propos).",
+      "Vérifier que chaque élément est bien accompagné d'un lien vers la source de référence."
+    ],
+    "screenshotsSources": [
+      "https://www.opquast.com",
+      "https://www.biocoop.fr",
+      "https://www.tripadvisor.fr"
+    ]
+  },
+
+  {
+    "id": 22,
+    "title": "Système d'Authentification Unifiée",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/22",
+    "description": "Un identifiant unique pour tous vos services",
+    "tags": ["Sécurité", "Authentification", "UX", "Accessibilité"],
+    "objectives": [
+      "Permettre aux utilisateurs de se connecter avec un seul identifiant à tous les services.",
+      "Offrir une authentification renforcée avec support 2FA pour une meilleure sécurité."
+    ],
+    "implementationIntro": "Mettre en place un système d'authentification unifié permettant un accès centralisé à tous les services avec gestion des comptes utilisateurs et 2FA.",
+    "implementation": [
+      "Créer un formulaire d'authentification unique",
+      "Implémenter la gestion des comptes avec inscription et connexion",
+      "Ajouter le support de l'authentification à deux facteurs (2FA)",
+      "Afficher un tableau de bord avec la liste des services accessibles",
+      "Enregistrer l'historique d'activité des utilisateurs"
+    ],
+    "control": [
+      "Vérifier la possibilité de s'inscrire avec un nouveau compte",
+      "Tester la connexion avec les identifiants créés",
+      "Vérifier l'activation et l'utilisation du 2FA",
+      "Vérifier l'accès aux services après authentification",
+      "Vérifier l'historique d'activité est enregistré"
+    ],
+    "screenshotsSources": ["https://account.microsoft.com/"]
+  },
+  {
+    "id": 23,
+    "title": "L'utilisateur peut désactiver toutes ses connexions actives",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/23",
+    "description": "Permettre à l'utilisateur de protéger ses données et contenus personnels en contrôlant ses sessions actives",
+    "tags": ["Sécurité", "Authentification", "Confidentialité", "UX"],
+    "objectives": [
+      "Permettre à l'utilisateur de protéger ses données et contenus personnels.",
+      "Limiter les risques d'usurpation d'identité.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
+    ],
+    "implementationIntro": "Fournir à l'utilisateur un mécanisme lui permettant de désactiver globalement toutes les connexions actives de ses différents appareils au service ou à l'espace privé.",
+    "implementation": [
+      "Ajouter une section de gestion des sessions dans les paramètres utilisateur",
+      "Afficher la liste de tous les appareils connectés avec leur localisation et date de connexion",
+      "Permettre de terminer une session spécifique",
+      "Ajouter un bouton pour déconnecter tous les appareils en une seule action"
+    ],
+    "control": [
+      "Se connecter au service ou à l'espace privé à partir de plusieurs périphériques différents, et vérifier que le site permet de désactiver globalement toutes les connexions actives."
+    ],
+    "screenshotsSources": ["https://myaccount.google.com/device-activity", "https://github.com/settings/sessions"]
+  },
+  {
+    "id": 24,
+    "title": "Les adresses mail avec alias sont acceptées",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/24",
+    "description": "Permettre aux utilisateurs d'utiliser des comptes mails dédiés à un usage spécifique et de tracer la diffusion de leurs adresses",
+    "tags": ["Sécurité", "Authentification", "Email", "Confidentialité"],
+    "objectives": [
+      "Permettre aux utilisateurs d'utiliser des comptes mails dédiés à un usage spécifique.",
+      "Permettre aux utilisateurs de tracer la diffusion de leurs adresses mail.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
+    ],
+    "implementationIntro": "Pour toute validation d'une adresse mail saisie par l'utilisateur, accepter les adresses du type foo.bar+truc@example.com",
+    "implementation": [
+      "Accepter les caractères '+' dans les champs de validation d'adresses email",
+      "Valider les adresses avec alias comme identifiants valides",
+      "Permettre la réception d'emails à ces adresses alias",
+      "Afficher les adresses avec alias dans les profils utilisateurs"
+    ],
+    "control": [
+      "Vérifier, pour chaque saisie d'une adresse mail saisie par l'utilisateur, que les adresses du type foo.bar+truc@example.com sont acceptées et sont fonctionnelles (utilisation comme identifiant, réception d'un mail envoyé par le site, etc.)"
+    ],
+    "screenshotsSources": []
+  },
+  {
+    "id": 25,
+    "title": "L'en-tête HTTP Referrer-Policy est configuré",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/25",
+    "description": "Contrôler les informations transmises par le serveur concernant la navigation des utilisateurs",
+    "tags": [
+      "Sécurité",
+      "Confidentialité",
+      "Headers HTTP",
+      "Protection des données"
+    ],
+    "objectives": [
+      "Protéger les utilisateurs de la divulgation d'éventuelles informations sensibles concernant leur navigation.",
+      "Sécuriser le chargement des ressources externes.",
+      "Maîtriser les informations transmises par le serveur.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
+    ],
+    "implementationIntro": "Pour chaque page du site, configurer le serveur pour envoyer l'entête HTTP Referrer-Policy avec comme valeur, par ordre de préférence :",
+    "implementation": [
+      "Configurer l'en-tête Referrer-Policy avec la valeur 'no-referrer' (recommandé pour la sécurité maximale)",
+      "Alternativement utiliser 'same-origin' (inclure le référent uniquement pour les requêtes même-origine)",
+      "Ou utiliser 'strict-origin' (inclure l'origine uniquement, jamais le chemin complet)",
+      "Ou utiliser 'strict-origin-when-cross-origin' (strict-origin pour les requêtes cross-origin, référent complet pour same-origin)",
+      "Tester et valider l'en-tête sur toutes les pages du site"
+    ],
+    "control": [
+      "Vérifier pour chaque page du site, la présence de l'entête HTTP Referrer-Policy",
+      "Confirmer que la valeur utilisée est parmi les suivantes : no-referrer, same-origin, strict-origin, ou strict-origin-when-cross-origin",
+      "Tester avec les outils de développement du navigateur (onglet Network / Headers) que l'en-tête est correctement envoyé"
+    ],
+    "screenshotsSources": ["https://securityheaders.com/"]
+  },
+  {
+    "id": 26,
+    "title": "Les messages d'erreur d'authentification ne révèlent pas l'existence de comptes",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/26",
+    "description": "Ne pas divulguer d'informations sur l'existence de comptes utilisateurs lors des tentatives d'authentification",
+    "tags": [
+      "Sécurité",
+      "Authentification",
+      "Protection des données",
+      "UX Sécurité"
+    ],
+    "objectives": [
+      "Prévenir les tentatives d'usurpation de comptes ou d'identité.",
+      "Améliorer la sécurité des utilisateurs et utilisatrices."
+    ],
+    "implementationIntro": "En réponse à une tentative de création de compte, de connexion ou à une demande de renvoi du mot de passe, ne pas afficher de messages qui révèlent l'existence ou l'absence d'un compte.",
+    "implementation": [
+      "Remplacer 'Cet email est déjà utilisé' par 'Si vous avez déjà un compte, utilisez la récupération de mot de passe.'",
+      "Remplacer 'Mot de passe incorrect' par 'Identifiants incorrects. Veuillez vérifier votre adresse et mot de passe.'",
+      "Remplacer 'Veuillez suivre la procédure de réinitialisation...' par 'Si un compte existe pour cette adresse, un email de réinitialisation a été envoyé.'",
+      "Remplacer 'Compte verrouillé' par 'Impossible de se connecter. Réessayer plus tard ou utilisez la récupération de mot de passe.'",
+      "Appliquer ces directives à tous les formulaires d'authentification (création, connexion, récupération de mot de passe)"
+    ],
+    "control": [
+      "Vérifier qu'aucune information n'est donnée sur l'existence d'un compte utilisateur lors de tentatives de création de compte",
+      "Vérifier que les messages d'erreur de connexion ne distinguent pas entre email inexistant et mot de passe incorrect",
+      "Vérifier que les messages de récupération de mot de passe ne confirment pas l'existence du compte",
+      "Tester avec des adresses valides et invalides pour confirmer que les messages sont identiques"
+    ],
+    "screenshotsSources": ["https://github.com/login"]
+  },
+  {
+    "id": 27,
+    "title": "Un certificat de sécurité informatique valide est en place",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/27",
+    "description": "Utiliser HTTPS et un certificat SSL valide pour protéger les données sensibles des utilisateurs",
+    "tags": ["Sécurité", "HTTPS", "SSL", "Certificats", "Chiffrement"],
+    "objectives": [
+      "Conforter la confiance de l'utilisateur.",
+      "Permettre à l'utilisateur de saisir des données sensibles en sachant qu'elles seront protégées.",
+      "Minimiser les risques d'utilisation frauduleuse des données des utilisateurs.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
+    ],
+    "implementationIntro": "Mettre en place un certificat de sécurité informatique (SSL/TLS) valide supporté par les versions récentes des navigateurs, et recourir à des services d'authentification décentralisés comme OpenID.",
+    "implementation": [
+      "Obtenir un certificat SSL/TLS auprès d'une autorité de certification reconnue",
+      "Configurer le serveur pour servir le site en HTTPS",
+      "Rediriger automatiquement le trafic HTTP vers HTTPS",
+      "Utiliser un certificat supporté par les navigateurs modernes (RSA 2048+, ECDSA 256+)",
+      "Mettre à jour le certificat avant expiration",
+      "Implémenter des en-têtes de sécurité (HSTS, CSP, X-Frame-Options)",
+      "Considérer OpenID pour l'authentification décentralisée"
+    ],
+    "control": [
+      "Accéder au site en HTTP et vérifier la redirection automatique vers HTTPS",
+      "Vérifier que les pages contenant des données sensibles (login, paiement, données personnelles) sont en HTTPS",
+      "Utiliser les outils du navigateur pour vérifier le certificat SSL/TLS valide",
+      "Vérifier la présence du cadenas dans la barre de navigation",
+      "Si données sensibles sur page HTTP, vérifier que l'attribut action du formulaire pointe vers une URL HTTPS",
+      "Vérifier l'en-tête HSTS est présent pour forcer HTTPS"
+    ],
+    "screenshotsSources": ["https://github.com","http://neverssl.com"]
+  },
+  {
+    "id": 28,
+    "title": "Les données sensibles ne sont pas transmises en clair dans l'URL",
+    "authors": ["Edwiyyin"],
+    "path": "/rules/28",
+    "description": "Protéger les données sensibles en évitant qu'elles ne soient visibles dans l'URL",
+    "tags": ["Sécurité", "Confidentialité", "Formulaires", "POST", "HTTP"],
+    "objectives": [
+      "Éviter que des données sensibles ne soient publiques et stockées en clair aux différentes étapes de l'accès à la page (FAI, proxy, serveur web, historique du navigateur, services tiers…).",
+      "Permettre à l'utilisateur de saisir des données sensibles en sachant qu'elles seront protégées et confidentielles.",
+      "Renforcer la confiance des utilisateurs sur l'utilisation de leurs données"
+    ],
+    "implementationIntro": "Utiliser la méthode POST pour envoyer les données de formulaire sensibles et ne jamais inclure de données sensibles dans les URLs.",
+    "implementation": [
+      "Envoyer les données de formulaire sensibles par la méthode POST, jamais GET",
+      "Ne pas inscrire de données sensibles (identifiants, mots de passe, numéros bancaires) dans l'URL d'un lien",
+      "Ne pas utiliser le format http://user:pass@example.com/",
+      "Ne pas transmettre les identifiants de session dans l'URL",
+      "Utiliser les cookies pour transmettre les identifiants de session (cookies HttpOnly de préférence)",
+      "Tester avec les cookies activés et désactivés pour éviter les fallback non sécurisés"
+    ],
+    "control": [
+      "Vérifier lors de connexion qu'aucune donnée n'apparaît dans l'URL (pas de login.php?user=xxx@password=yyy)",
+      "Contrôler que les pages ne comportent pas de liens contenant des identifiants ou mots de passe",
+      "Vérifier que l'identifiant de session n'est pas transmis dans l'URL (pas de page.php?SESSIONID=123abc)",
+      "Tester en activant et désactivant les cookies du navigateur",
+      "Vérifier que les données sensibles soient transmises via POST (onglet Network du navigateur)"
+    ],
+    "screenshotsSources": []
   },
   {
     "id": 87,
@@ -88,6 +847,186 @@
       "Vérifier, pour chaque page concernée, que la liste des étapes y est indiquée, en règle générale sous forme d'un chemin d'étapes en tête de page ou de formulaire."
     ],
     "screenshotsSources": []
+  },
+  {
+    "id": 72,
+    "title": "Le format de saisie des champs de formulaire qui le nécessitent est indiqué",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/72",
+    "description": "Évitons de transformer une saisie de date, de monnaie ou autre en jeu de devinette. Il faut indiquer clairement le format attendu.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Limiter le risque d'erreurs de saisie.",
+      "Limiter les risques associés à l'envoi de données erronées.",
+      "Éviter que l'utilisateur ne renonce faute d'information.",
+      "Améliorer l’accessibilité."
+    ],
+    "implementationIntro": "Indiquer le format attendu directement dans le label ou la description du champ.",
+    "implementation": [
+      "Utiliser l'attribut placeholder (avec précaution, car il disparaît).",
+      "Préférer une indication permanente dans le <label>.",
+      "Utiliser un texte d'aide associé via aria-describedby."
+    ],
+    "control": [
+      "Soumettre des formats incorrects pour voir si l'erreur est bien gérée.",
+      "Vérifier la présence de l'indication de format dans le code."
+    ],
+    "screenshotsSources": ["https://sncf-connect.com","https://airbnb.fr","https://amazon.fr"]
+  },
+  {
+    "id": 73,
+    "title": "L'utilisateur est averti lorsqu'une saisie est sensible à la casse",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/73",
+    "description": "Il est agaçant de devoir recommencer une saisie parce qu'on ignorait qu'il fallait des majuscules.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Éviter le risque d'erreur.",
+      "Éviter l'incompréhension de l'utilisateur face à une erreur.",
+      "Améliorer l’accessibilité."
+    ],
+    "implementationIntro": "Préciser explicitement si des majuscules ou minuscules sont imposées.",
+    "implementation": [
+      "Ajouter la mention 'Respecter la casse' ou 'Majuscules obligatoires' dans le label.",
+      "Utiliser un message d'aide visible."
+    ],
+    "control": [
+      "Tester la saisie avec et sans respect de la casse.",
+      "Vérifier la présence de l'avertissement dans le label ou aria-label."
+    ],
+    "screenshotsSources": ["https://www2.hm.com","https://secure.fnac.com","https://amazon.fr"]
+  },
+  {
+    "id": 74,
+    "title": "L'étiquette de chaque champ de formulaire qui le nécessite indique les limites de nombre de caractères",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/74",
+    "description": "Préciser les limites en nombre de caractères pour éviter les coupures de texte inattendues.",
+    "tags": ["Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Prévenir les erreurs d’envoi.",
+      "Prévenir les pertes de données.",
+      "Éviter l'agacement de l'utilisateur."
+    ],
+    "implementationIntro": "Afficher la limite de caractères et idéalement un compteur dynamique.",
+    "implementation": [
+      "Indiquer 'Max 140 caractères' dans le label.",
+      "Utiliser l'attribut maxlength sur l'input.",
+      "Ajouter un compteur visuel (JS)."
+    ],
+    "control": [
+      "Vérifier que la limite est indiquée textuellement.",
+      "Vérifier la cohérence avec la contrainte technique (maxlength)."
+    ],
+    "screenshotsSources": ["https://x.com","https://linkedin.com","https://ads.google.com"]
+  },
+  {
+    "id": 75,
+    "title": "La création d'un mot de passe par l'utilisateur fait l'objet d'un mécanisme de prévention des erreurs de saisie",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/75",
+    "description": "Éviter à l'utilisateur de définir un mot de passe erroné qu'il ne pourra pas réutiliser ensuite.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Garantir que le mot de passe enregistré est bien celui souhaité."
+    ],
+    "implementationIntro": "Mettre en place une confirmation ou une visualisation.",
+    "implementation": [
+      "Ajouter un champ 'Confirmez votre mot de passe'.",
+      "Vérifier la correspondance des deux champs en JS."
+    ],
+    "control": [
+      "Vérifier la présence du champ de confirmation lors de la création de compte."
+    ],
+    "screenshotsSources": ["https://discord.com","https://linkedin.com","https://myaccount.google.com"]
+  },
+  {
+    "id": 76,
+    "title": "Les caractères saisis dans un champ de mot de passe peuvent être affichés en clair",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/76",
+    "description": "Donner la possibilité d'afficher le mot de passe pour vérifier sa saisie, surtout sur mobile.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Faciliter la saisie, notamment sur mobile.",
+      "Prévenir les erreurs."
+    ],
+    "implementationIntro": "Ajouter un bouton 'œil' pour basculer la visibilité.",
+    "implementation": [
+      "Créer un bouton qui change l'attribut type='password' en type='text'."
+    ],
+    "control": [
+      "Contrôler le fonctionnement du bouton d'affichage du mot de passe."
+    ],
+    "screenshotsSources": ["https://brave.com","https://x.com","https://fnac.com"]
+  },
+  {
+    "id": 77,
+    "title": "Chaque étiquette de formulaire est visuellement rattachée au champ qu'elle décrit",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/77",
+    "description": "L'emplacement de l'étiquette ne doit pas prêter à confusion sur le champ concerné.",
+    "tags": ["Accessibilité", "Conception", "Formulaires"],
+    "objectives": [
+      "Identifier sans ambiguïté les champs.",
+      "Prévenir les erreurs.",
+      "Faciliter l'usage."
+    ],
+    "implementationIntro": "Soigner le CSS (marges, espacements) pour grouper Label + Input.",
+    "implementation": [
+      "Placer le label juste au-dessus ou à gauche du champ.",
+      "Utiliser des marges (margin-bottom) pour séparer les groupes de champs."
+    ],
+    "control": [
+      "Vérifier la proximité immédiate (quelques pixels) entre label et champ.",
+      "Vérifier l'absence d'ambiguïté sur mobile."
+    ],
+    "screenshotsSources": ["https://www.booking.com","https://docs.google.com/forms","https://stripe-payments-demo.appspot.com"]
+  },
+  {
+    "id": 78,
+    "title": "Les informations contextuelles se rapportant à un champ de formulaire lui sont visuellement rattachées",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/78",
+    "description": "Les aides à la saisie (bulles d'aide, format, erreurs) doivent être collées au champ concerné.",
+    "tags": ["Accessibilité", "Conception", "Formulaires"],
+    "objectives": [
+      "Faciliter l'utilisation pour les utilisateurs de loupe d'écran.",
+      "Assurer la compréhension du lien entre l'aide et le champ."
+    ],
+    "implementationIntro": "Placer les textes d'aide dans le même conteneur visuel que le champ.",
+    "implementation": [
+      "Afficher l'aide sous le champ ou juste après le label.",
+      "Éviter les espaces vides importants entre l'input et son message d'aide."
+    ],
+    "control": [
+      "Vérifier la proximité immédiate des informations d'aide.",
+      "Vérifier l'absence d'espace vide important."
+    ],
+    "screenshotsSources": ["https://www.autoentrepreneur.urssaf.fr/","https://www.fnac.com","https://www.fnac.com"]
+  },
+  {
+    "id": 79,
+    "title": "En cas de rejet des données saisies dans un formulaire, les champs contenant les données rejetées sont indiqués à l'utilisateur",
+    "authors": ["Joud CHEBIRA"],
+    "path": "/rules/79",
+    "description": "L'utilisateur ne doit pas chercher ses erreurs. Elles doivent être signalées globalement et individuellement.",
+    "tags": ["Basics", "Accessibilité", "Conception", "Développement", "Formulaires"],
+    "objectives": [
+      "Donner un retour clair sur l'action.",
+      "Guider l'utilisateur vers les corrections."
+    ],
+    "implementationIntro": "Combiner un résumé des erreurs en haut de page et un marquage sur chaque champ.",
+    "implementation": [
+      "Ajouter un récapitulatif des erreurs en haut du formulaire.",
+      "Ajouter une classe CSS d'erreur et un message sous chaque champ concerné.",
+      "Modifier le <title> de la page pour inclure 'Erreur'."
+    ],
+    "control": [
+      "Soumettre un formulaire vide/invalide.",
+      "Vérifier le message global et le marquage individuel des champs."
+    ],
+    "screenshotsSources": ["https://www2.hm.com","https://www.booking.com","https://dashboard.stripe.com"]
   },
   {
     "id": 88,
@@ -115,7 +1054,7 @@
     "authors": ["Adrien LECOMTE"],
     "path": "/rules/89",
     "description": "Après avoir décidé de passer à l’étape suivante d’un processus complexe, il arrive souvent d’avoir besoin de vérifier ce qu’on a saisi précédemment. Laissez aux internautes la possibilité de douter, de vérifier, et de se tromper, bien sûr.",
-    "tags": ["Accessibilité","Développement", "Conception", "Formulaires"],
+    "tags": ["Accessibilité", "Développement", "Conception", "Formulaires"],
     "objectives": [
       "Faciliter l’utilisation des formulaires répartis sur plusieurs pages successives.",
       "Réduire les risques d’erreurs de saisie. Limiter les risques d’abandon en cours de processus."
@@ -133,7 +1072,13 @@
     "authors": ["Adrien LECOMTE"],
     "path": "/rules/90",
     "description": "Ne vous est-il jamais arrivé de croire que vous pouviez tout simplement retourner voir ce que vous aviez saisi à l’étape précédente lors de votre déclaration d’impôts, par exemple, et de constater peu après que tout ce que vous aviez saisi avant ce remords était perdu ? Évitons ce genre de déception à nos utilisateurs.",
-    "tags": ["Basics", "Accessibilité", "Conception","Développement", "Formulaires"],
+    "tags": [
+      "Basics",
+      "Accessibilité",
+      "Conception",
+      "Développement",
+      "Formulaires"
+    ],
     "objectives": [
       "Faciliter l’utilisation des formulaires répartis sur plusieurs pages successives.",
       "Limiter les risques d’abandon en cours de processus."
@@ -170,9 +1115,7 @@
     "path": "/rules/92",
     "description": "Saisissez votre adresse e-mail. C’est bon, c’est fait ? Et si maintenant je vous demande de la saisir de nouveau, vous allez peut-être avoir la flemme de le faire et voudrez la copier depuis le premier champ pour la coller dans le deuxième. De quel droit certains sites voudraient-ils vous empêcher de faire cela ? Vive le copier-coller libre !",
     "tags": ["Basics", "Accessibilité", "Développement", "Formulaires"],
-    "objectives": [
-      "Faciliter la saisie dans les formulaires."
-    ],
+    "objectives": ["Faciliter la saisie dans les formulaires."],
     "implementationIntro": "",
     "implementation": [
       "Ne pas intercepter les événements JavaScript onpaste ou keydown pour bloquer le coller dans un champ de formulaire.",
@@ -400,6 +1343,349 @@
     "screenshotsSources": [
       "Bonne pratique - Icônes avec texte",
       "Mauvaise pratique - Icônes seules"
+    "id": 101,
+    "title": "L'identité de l'auteur, de la société ou de l'organisation est indiquée.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/101",
+    "description": "Dans de nombreux pays, il s’agit d’une obligation légale. Mais au-delà des aspects juridiques locaux, il est bon qu’une personne se porte garante des contenus du site et que cette personne soit identifiée.",
+    "tags": ["Conception", "Editorial", "Identification et contact", "SEO"],
+    "objectives": [
+      "Permettre aux utilisateurs d’identifier sans ambiguïté un interlocuteur physique capable de répondre aux questions éventuelles sur les contenus proposés, ou d’assumer les responsabilités liées à ces contenus.",
+      "Rassurer l'utilisateur en lui permettant d'identifier directement l'auteur (au sens large).",
+      "Limiter les risques de défiance.",
+      "Améliorer la prise en compte des contenus par les moteurs de recherche et outils d’indexation"
+    ],
+    "implementationIntro": "Indiquer, au moins sur une page et idéalement sur chaque page, le nom de l'auteur, de l'entité ou de la société qui propose le service.",
+    "implementation": ["Si le nom du site est identique à celui de l'entité qui le propose, ce qui est relativement fréquent, notamment pour les entreprises, la mention de ce nom dans le logo ou la baseline suffit à respecter la bonne pratique."],
+    "control": [
+      "Au sein de la page d'accueil ou au moins dans une page accessible depuis la page d'accueil (fréquemment, la page des mentions légales) ou encore dans chacune des pages du site (souvent en pied de page) :",
+      "Vérifier manuellement que le nom de l'auteur, de l'entité ou de la société proposant le service est mentionné dans au moins une de ces pages."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Le titre de chaque page permet d'identifier le site.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/102",
+    "description": "Le titre d’une page web est amené à s’afficher dans divers endroits : navigateurs, favoris, titre d’un contenu partagé via les réseaux sociaux, etc. Si chacun de ces titres contient le nom de votre site, les utilisateurs pourront l’identifier plus facilement et retrouver rapidement les contenus qui s’y rapportent.",
+    "tags": ["Accessibilité", "Développement", "Identification et contact", "SEO"],
+    "objectives": [
+      "Permettre aux utilisateurs d'identifier immédiatement le site dans les onglets, les favoris, dans la fenêtre du navigateur ou encore dans les lecteurs d'écran.",
+      "Améliorer le référencement du site et sa présentation dans les moteurs de recherche.",
+      "Améliorer l’accessibilité des contenus aux personnes handicapées.",
+      "Améliorer la prise en compte des contenus par les moteurs de recherche et outils d’indexation"
+    ],
+    "implementationIntro": "",
+    "implementation": ["Rédiger le contenu de l'élément title de chaque page de manière à y indiquer le nom du site."],
+    "control": [
+      "Pour chaque page du site, vérifier que le nom du site est présent dans le titre (élément title) de page.",
+      "Le contrôle peut être effectué de manière exhaustive si l'on dispose d'un outil permettant de dresser la liste complète des titres de toutes les pages (c'est le cas, par exemple, de Xenu's Link Sleuth). Il peut également être effectué à partir d'une vérification des templates utilisés par le CMS ou d'un échantillon de pages-types représentatives de ceux-ci. Dans tous les cas, on veillera à prendre en compte tout particulièrement les pages dépendant de services tiers, où la bonne pratique risque davantage de ne pas avoir été prise en compte."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Le titre de chaque page permet d'identifier son contenu.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/103",
+    "description": "Identifier le site en regardant le titre d’une page, c’est bien, mais comprendre très vite la nature du contenu d’une page, c’est encore mieux. Et ce ne sont pas les moteurs de recherche qui diront le contraire.",
+    "tags": ["Basics", "Accessibilité", "Editorial", "Identification et contact", "SEO"],
+    "objectives": [
+      "Permettre aux utilisateurs d'identifier immédiatement la nature des contenus de chaque page dans les onglets, les favoris, dans la fenêtre du navigateur ou encore dans les lecteurs d'écran.",
+      "Améliorer le référencement des pages et leur présentation dans les moteurs de recherche.",
+      "Améliorer l’accessibilité des contenus aux personnes handicapées.",
+      "Améliorer la prise en compte des contenus par les moteurs de recherche et outils d’indexation"
+    ],
+    "implementationIntro": "",
+    "implementation": [
+      "Rédiger le contenu de l'élément title de chaque page de manière à ce qu'il décrive, de la façon la plus concise possible, le contenu ou la fonction de la page , y compris à la suite d'une requête Ajax modifiant de manière essentielle le contenu de la page.",
+      "Préciser quelle est l'étape en cours d'un processus dans l'élément title des pages. Par exemple, inscrire « Étape 3 de votre inscription » dans l'élément title de la page correspondant à la troisième étape d'un formulaire d'inscription.",
+      "Préciser, dans le cas de l'affichage d'une série de résultats de recherche, quel est l'intervalle de résultats affiché dans la page courante. Par exemple, « Résultats 10 à 19 de la recherche sur “Foo” ».",
+      "Préciser l'état dans le titre d'une page de demande de confirmation ou d'annulation lors de la soumission d'un formulaire (exemple : « Demande de confirmation de suppression - Mes documents »)."
+    ],
+    "control": [
+      "Dans toutes les pages du site, y compris dans les pages d'un processus ou d'une série de résultats de recherche, ou encore dans les pages dont le contenu peut être modifié de manière majeure via Ajax :",
+      "Vérifier que chaque titre de page (élément title) permet d'identifier le contenu ou la fonction de la page."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 104,
+    "title": "Le code source des pages contient un appel valide à une icône de favori.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/104",
+    "description": "L’icône de favori est la petite image qui s’affiche dans votre navigateur et dans vos marque-pages ou favoris. Elle mérite d’être bien traitée, car elle joue un rôle important dans l’identification durable de votre site.",
+    "tags": ["Basics", "Conception", "Développement", "Identification et contact"],
+    "objectives": [
+      "Améliorer l'identification visuelle du site et de ses pages.",
+      "Faciliter l'identification dans le navigateur et dans les favoris ou signets.",
+      "Permettre l'affichage, l'appel, et la mémorisation éventuelle de l'icône de favori par tous les navigateurs."
+    ],
+    "implementationIntro": "Selon le format choisi pour l'icône et son emplacement, utiliser un lien du type :",
+    "implementation": [
+      "<link rel='icon' type='image/png' href='/img/favicon.png'/> (format png, mais aussi jpg, gif, etc.) ;",
+      "<link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' /> (format ico Microsoft seul reconnu par Internet Explorer)."
+    ],
+    "control": [
+      "Dans le code source de chaque page examinée :",
+      "Vérifier, à l'aide d'un outil de développement web ou d'un inspecteur de code, que l'élément link rel est présent dans l'en-tête de page head ;",
+      "Vérifier que sa syntaxe est de la forme :",
+      "<link rel='icon' type='image/png' href='/img/favicon.png'/> pour les formats png, mais aussi jpg, gif, etc. ;",
+      "ou <link rel='shortcut icon' type='image/x-icon' href='/img/favicon.ico' /> pour le format ico Microsoft."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 105,
+    "title": "L’adresse complète et le numéro de téléphone des sociétés et organisations sont disponibles depuis toutes les pages.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/105",
+    "description": "De nombreux internautes se rendent sur un site pour chercher l’adresse ou le numéro de téléphone de l’entité. Faites-leur gagner du temps en donnant immédiatement cette information.",
+    "tags": ["Conception", "Editorial", "Identification et contact", "SEO"],
+    "objectives": [
+      "Donner aux utilisateurs qui le souhaitent la possibilité d'accéder sans difficulté aux moyens de contact téléphoniques et postaux.",
+      "Améliorer la prise en compte des contenus par les moteurs de recherche et outils d’indexation",
+      "Renforcer la confiance en associant à l'entité un élément d'identification concret"
+    ],
+    "implementationIntro": "Indiquer l'adresse postale complète et le numéro de téléphone de la société ou de l'organisme",
+    "implementation": [
+      "Dans chaque page du site ;",
+      "Ou dans une page Contact ou À propos, accessible directement depuis chaque page du site."
+    ],
+    "control": [
+      "Dans chaque page du site ou dans au moins une page directement disponible depuis toutes les pages du site",
+      "Vérifier la présence de l'adresse postale complète et du numéro de téléphone de la société ou de l'organisme."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 106,
+    "title": "Le numéro d'immatriculation délivré aux sociétés ou organisations au terme des procédures légales d'enregistrement en vigueur dans leur pays est indiqué.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/106",
+    "description": "Sur Internet, une société peut être totalement fictive. La simple mention d’un numéro officiel permet de donner un indice sur sa réalité administrative.",
+    "tags": ["Editorial", "Identification et contact"],
+    "objectives": [
+      "Fournir aux utilisateurs une indication vérifiable de l'existence officielle de la structure qui propose les contenus ou le service."
+    ],
+    "implementationIntro": "Indiquer le numéro d'immatriculation délivré à la société ou association au terme des procédures légales d'enregistrement en vigueur dans son pays. Cette bonne pratique ne s'applique pas aux personnes physiques, sauf si elles sont constituées en entité juridique (freelances, auto-entrepreneurs, etc.).",
+    "implementation": [],
+    "control": [
+      "Sur la page d'accueil, ou sur la page des mentions légales, la page d'à propos, de contact, ou encore dans les pages consacrées aux conditions générales d'utilisation ou de vente :",
+      "Vérifier que le numéro d'immatriculation délivré à la société ou association au terme des procédures légales d'enregistrement en vigueur dans son pays est indiqué."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    ]
+  },
+  {
+    "id": 107,
+    "title": "Au moins deux moyens de contact sont proposés.",
+    "authors": ["Matteo LINGLET"],
+    "path": "/rules/107",
+    "description": "Mettre à la disposition des internautes un formulaire de contact ou un numéro de téléphone, c’est une bonne chose. Cependant, l’un des deux peut être en défaut ou poser problème aux usagers.",
+    "tags": ["Accessibilité", "Conception", "Editorial", "Identification et contact"],
+    "objectives": [
+      "Optimiser les possibilités de retour d’information de la part des utilisateurs.",
+      "Éviter de mettre l’utilisateur en difficulté en cas d’indisponibilité ou de problèmes d’utilisation de l’un des moyens de contact."
+    ],
+    "implementationIntro": "Par exemple, indiquer l’adresse postale ou le numéro de téléphone de l’auteur et/ou du webmestre et mettre en place un formulaire permettant de les contacter.",
+    "implementation": [],
+    "control": [
+      "Dans l’ensemble du site :",
+      "Vérifier la présence d’au moins deux modes de contact.",
+      "Vérifier qu’il est possible de joindre effectivement l’auteur et/ou le responsable technique via les modes de contact proposés."
+    ],
+    "screenshotsSources": [
+      "https://www.gmail.com/",
+      "https://www.nuxt.com/blog",
+      "https://developer.mozilla.org/fr/"
+    "id": 212,
+    "title": "Un mécanisme de sécurité restreint l'origine des contenus.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/212",
+    "description": "Le serveur envoie une page contenant divers éléments (fichiers JavaScript, CSS, webfonts, etc.) au navigateur, qui va se charger de télécharger et d’afficher le tout, le mieux et le plus vite possible… sans se poser de questions sur la légitimité de ce qu’il fait. Le système nommé Content Security Policy permet d’indiquer au navigateur des règles concernant l’origine de ces contenus. Cela permet de déterminer précisément ce qu’il aura le droit d’exécuter ou d’afficher, et cela renforce donc la sécurité pour les utilisateurs.",
+    "tags": ["Basics", "Développement", "Sécurité"],
+    "objectives": [
+      "Réduire les risques d’exécution ou d’affichage d’un contenu non désirable ou d’une source non autorisée."
+    ],
+    "implementationIntro": "Activer l’en-tête HTTP Content-Security-Policy avec les directives CSP 1 appropriées :",
+    "implementation": [
+      "img-src pour les images ;",
+      "script-src pour le JavaScript ;",
+      "style-src pour les styles CSS ;",
+      "font-src pour les webfonts ;",
+      "etc."
+    ],
+    "control": [
+      "Vérifier, à l'aide d'un outil d'inspection des en-têtes HTTP, la présence de l'en-tête Content-Security-Policy."
+    ],
+    "screenshotsSources": [
+      "https://www.mozilla.org",
+      "https://www.wikipedia.org"
+    ]
+  },
+  {
+    "id": 213,
+    "title": "Le serveur ne communique pas d'informations sur les logiciels et langages utilisés.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/213",
+    "description": "Les vrais informaticiens connaissent la vérité : il n’existe pas de logiciel ou d’outil informatique sécurisé à 100%. Chaque version de logiciel utilisé de manière importante -et c’est le cas de la plupart des logiciels serveurs, systèmes de gestion de contenus et même des formats utilisés sur le web présente un certain nombre de défauts. Utiliser telle ou telle version d’un logiciel peut aiguiller directement une personne mal intentionnée vers une faille de sécurité documentée. Votre serveur peut être configuré pour annoncer à tout le monde qu’il tourne avec la version X du logiciel Y. Ou alors, vous veillez à respecter cette règle et il sera muet comme un carpe.",
+    "tags": ["Développement", "Sécurité"],
+    "objectives": [
+      "Prévenir les risques d’intrusion sur le serveur.",
+      "Prévenir l’apparition de contenus ou scripts malveillants sur le site."
+    ],
+    "implementationIntro": "Ne communiquer via les entêtes HTTP envoyés par le serveur aucune information sur les logiciels et langages utilisés côté serveur, en particulier via les entêtes Server, X-Powered-By et X-AspNet-Version.",
+    "implementation": [],
+    "control": [
+      "Vérifier que les les entêtes HTTP envoyés par le serveur ne donnent aucune information sur les logiciels et langages utilisés côté serveur."
+    ],
+    "screenshotsSources": ["https://www.google.com", "https://www.github.com"]
+  },
+  {
+    "id": 214,
+    "title": "Le contrôle d'intégrité des ressources tierces est présent et valide.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/214",
+    "description": "Il est possible de vérifier que les ressources tierces (fichiers scripts, feuilles de style…) n’ont pas été modifiées pour y insérer du code malveillant. Pour ceci, le client web (navigateur, notamment) va vérifier en permanence que les fichiers envoyés sont les bons fichiers. Cette bonne pratique incite à la mise en place de cette mesure de sécurité.",
+    "tags": ["Développement", "Sécurité"],
+    "objectives": [
+      "Prévenir les risques de diffusion de code malveillant.",
+      "Limiter les risques associés à la diffusion de code malveillant : désindexation, plaintes, etc."
+    ],
+    "implementationIntro": "Utiliser l'attribut integrity de chaque élément link et script (appelant un fichier externe) pour fournir au navigateur le hachage cryptographique (hachage SRI) auquel le fichier doit correspondre.",
+    "implementation": [],
+    "control": [
+      "Vérifier pour chaque élément link et script (appelant un fichier externe) la présence de l'attribut integrity indiquant le hachage cryptographique (hachage SRI) auquel le fichier concerné doit correspondre."
+    ],
+    "screenshotsSources": [
+      "https://getbootstrap.com/docs",
+      "https://www.cdnjs.com"
+    ]
+  },
+  {
+    "id": 215,
+    "title": "Les opérations sécurisées peuvent être validées par au moins deux moyens.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/215",
+    "description": "Le web étant ce qu’il est, les serveurs demandent de plus en plus souvent aux utilisateurs de valider certaines opérations en utilisant leur mobile, notamment. Il arrive cependant que les utilisateurs n’aient pas accès à leur mobile et ne soient donc pas en mesure de valider les opérations en question. C’est notamment le cas pour les personnes en déplacement à l’étranger. Pour éviter cela, proposez une solution de secours qui permettra tout de même de valider l’opération.",
+    "tags": ["Conception", "Développement", "Sécurité"],
+    "objectives": [
+      "Prévenir les risques d’échec des opérations.",
+      "Éviter l'exclusion d'utilisateurs pour des raisons techniques ou matérielles."
+    ],
+    "implementationIntro": "Pour toute opération sécurisée par un système de type authentification à double facteur ou autre authentification forte, fournir à l'utilisateur au moins deux mécanismes au choix pour l'utiliser (par exemple, authentification par SMS ou par terminal de validation).",
+    "implementation": [],
+    "control": [
+      "Vérifier pour toute opération sécurisée par un système de type authentification à double facteur ou autre authentification forte, que l'utilisateur a le choix entre au moins deux mécanismes (par exemple, authentification par SMS ou par terminal de validation)."
+    ],
+    "screenshotsSources": [
+      "https://github.com/settings/security",
+      "https://myaccount.google.com/security"
+    ]
+  },
+  {
+    "id": 216,
+    "title": "L'affichage de la barre d'adresse du navigateur n'est pas bloqué.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/216",
+    "description": "Certains sites affichent les formulaires de connexion dans des fenêtres séparées, sans la barre d’adresse du navigateur. Ces fenêtres isolées, sans affichage de l'URL, peuvent être utilisées pour récupérer les identifiants de connexion, sans que les utilisateurs et utilisatrices aient de moyens de se rendre compte qu’ils ne sont pas sur le bon site (phishing). De manière générale, il est toujours utile de savoir sur quel site l’on se trouve.",
+    "tags": ["Basics", "Conception", "Développement", "Sécurité"],
+    "objectives": [
+      "Limiter les risques d’interception d’identifiants et de mots de passe,",
+      "Limiter les usurpations de domaines,",
+      "Renforcer l’identification et la confiance en ligne."
+    ],
+    "implementationIntro": "Ne pas utiliser les techniques d'ouverture de popup permettant de masquer la barre d'adresse de la fenêtre. Par exemple, window.open() avec les options location= \"no\", toolbar=\"no\", fullscreen ou kiosk.",
+    "implementation": [],
+    "control": [
+      "Vérifier pour chaque fenêtre ouverte la présence visible de la barre d'adresse du navigateur."
+    ],
+    "screenshotsSources": [
+      "https://www.paypal.com",
+      "https://www.bankofamerica.com"
+    ]
+  },
+  {
+    "id": 217,
+    "title": "Le domaine de messagerie est authentifié",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/217",
+    "description": "Les mails envoyés aux utilisateurs ont une importance capitale pour la qualité des expériences en ligne. Il faut donc veiller à ce que ceux-ci arrivent bien, ne partent pas en spam et que les serveurs de mails associés au site ou à l’application soient considérés comme de confiance sur toute la chaîne de transmission et de réception des mails. Pour cela, il est essentiel d’authentifier correctement le domaine de messagerie.",
+    "tags": ["Basics", "Développement", "Sécurité"],
+    "objectives": [
+      "Protéger les utilisateurs contre les courriels frauduleux ou usurpés,",
+      "Améliorer la délivrabilité des emails légitimes (newsletters, confirmations, alertes),",
+      "Renforcer la réputation et la fiabilité du domaine émetteur,",
+      "Réduire le risque que les emails soient classés comme spam,",
+      "Respecter les exigences des principaux fournisseurs de messagerie,",
+      "Surveiller les emails envoyés avec le nom de domaine."
+    ],
+    "implementationIntro": "Pour chaque domaine utilisé pour l'envoi d’emails :",
+    "implementation": [
+      "SPF : Ajouter un enregistrement TXT dans le DNS du domaine listant les serveurs autorisés à envoyer des mails pour ce domaine,",
+      "DKIM : Configurer la signature cryptographique des emails émis via une clé privée, et publier la clé publique dans le DNS du domaine,",
+      "DMARC : Définir une politique (none, quarantine, reject) et spécifier une adresse de retour pour les rapports, via un enregistrement DNS."
+    ],
+    "control": [
+      "Pour chaque domaine utilisé pour l'envoi d'emails :",
+      "Vérifier que les enregistrements SPF, DKIM et DMARC sont présents et correctement configurés,",
+      "Analyser les en-têtes des e-mails reçus pour confirmer la bonne application des signatures,",
+      "S'assurer que les politiques définies (notamment DMARC) sont cohérentes avec les pratiques d'envoi du site."
+    ],
+    "screenshotsSources": [
+      "https://mxtoolbox.com/SuperTool.aspx",
+      "https://github.com"
+    ]
+  },
+  {
+    "id": 218,
+    "title": "L'adresse du site fonctionne avec et sans préfixe www.",
+    "authors": ["Enzo ROSSI"],
+    "path": "/rules/218",
+    "description": "Lorsque l’on saisit directement des termes de format domaine.com, certains navigateurs transforment en https://www.domaine.com, d’autres en https://domaine.com Il arrive fréquemment que cette dernière adresse renvoie une erreur, même sur de très gros sites. Pensez-y.",
+    "tags": ["Développement", "Serveurs et performances", "Écoconception"],
+    "objectives": [
+      "Permettre aux utilisateurs de rejoindre la page d'accueil du site même lorsqu'ils oublient de taper le préfixe www.",
+      "Diminuer l'impact énergétique lié à la consultation du site"
+    ],
+    "implementationIntro": "Configurer le serveur de façon à ce qu'il gère les adresses sans www (acheminement).",
+    "implementation": [],
+    "control": [
+      "Sur quelques unes des pages examinées :",
+      "Enlever le préfixe «www» dans l'adresse de la page, au sein de la barre d'URL de votre navigateur",
+      "Vérifier que vous avez toujours accès au site.",
+      "Attention : certains navigateurs masquent par défaut le préfixe www. Le test devra donc se faire en ajoutant http:// ou https://devant l'adresse tout en omettant le préfixe, par exemple : https://opquast.com."
+    ],
+    "screenshotsSources": [
+      "https://opquast.com",
+      "https://www.opquast.com",
+      "https://github.com"
     ]
   }
+  
 ]
